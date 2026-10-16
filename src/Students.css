@@ -1,0 +1,245 @@
+.students-page {
+  min-width: 0;
+  margin-top: 24px;
+  color: #ededed;
+}
+
+.students-page,
+.students-page * {
+  box-sizing: border-box;
+}
+
+.st-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.st-heading h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.st-heading p,
+.st-pagination p,
+.st-note {
+  margin: 0;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ช่องค้นหาและตัวกรอง */
+.st-filters {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.st-field {
+  display: flex;
+  flex: 1 1 140px;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.st-search {
+  flex: 2 1 260px;
+}
+
+.st-field label {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.st-field input,
+.st-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid #363636;
+  border-radius: 5px;
+  background: #202020;
+  color: #ededed;
+  color-scheme: dark;
+  font: inherit;
+  font-size: 13px;
+}
+
+.st-field input::placeholder {
+  color: #999;
+}
+
+.st-field select {
+  cursor: pointer;
+}
+
+.st-button {
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid #414141;
+  border-radius: 5px;
+  background: #252525;
+  color: #ededed;
+  font: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.st-button:hover:not(:disabled) {
+  background: #333;
+  border-color: #666;
+}
+
+.st-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.st-field input:focus-visible,
+.st-field select:focus-visible,
+.st-button:focus-visible,
+.st-table-wrap:focus-visible {
+  outline: 2px solid #8dbce3;
+  outline-offset: 3px;
+}
+
+/* ตารางเลื่อนแนวนอนได้ */
+.st-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #363636;
+  border-radius: 6px;
+}
+
+.st-table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.st-table th {
+  padding: 14px 16px;
+  border-bottom: 1px solid #414141;
+  background: #252525;
+  color: #bbb;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.st-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #303030;
+  vertical-align: middle;
+  line-height: 1.7;
+}
+
+.st-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.st-table tbody tr:hover {
+  background: #222;
+}
+
+.st-name {
+  display: block;
+  min-width: 170px;
+  font-weight: 500;
+}
+
+.st-id {
+  display: block;
+  margin-top: 4px;
+  color: #999;
+  font-size: 11px;
+}
+
+.st-role {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #28333d;
+  color: #b3d3ee;
+  font-size: 12px;
+}
+
+.st-status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.st-status.is-accepted {
+  background: #263c32;
+  color: #acd5b7;
+}
+
+.st-status.is-pending {
+  background: #403627;
+  color: #e6ca93;
+}
+
+.st-table .st-empty {
+  padding: 40px 20px;
+  color: #aaa;
+  text-align: center;
+}
+
+/* เปลี่ยนหน้าตาราง */
+.st-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.st-page-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.st-page-controls span {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.st-note {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #363636;
+}
+
+@media (max-width: 600px) {
+  .st-search {
+    flex-basis: 100%;
+  }
+
+  .st-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .st-page-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+}

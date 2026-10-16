@@ -1,0 +1,243 @@
+.companies-page {
+  min-width: 0;
+  margin-top: 24px;
+  color: #ededed;
+}
+
+.companies-page,
+.companies-page * {
+  box-sizing: border-box;
+}
+
+.co-heading {
+  margin-bottom: 22px;
+}
+
+.co-heading h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.co-heading p,
+.co-note {
+  margin: 0;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ค้นหาและกรองข้อมูล */
+.co-filters {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.co-field {
+  display: flex;
+  flex: 1 1 150px;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.co-search {
+  flex: 2 1 260px;
+}
+
+.co-field label {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.co-field input,
+.co-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid #363636;
+  border-radius: 5px;
+  background: #202020;
+  color: #ededed;
+  color-scheme: dark;
+  font: inherit;
+  font-size: 13px;
+}
+
+.co-field input::placeholder {
+  color: #999;
+}
+
+.co-field select {
+  cursor: pointer;
+}
+
+.co-button {
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid #414141;
+  border-radius: 5px;
+  background: #252525;
+  color: #ededed;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.co-button:hover {
+  background: #333;
+  border-color: #666;
+}
+
+.co-field input:focus-visible,
+.co-field select:focus-visible,
+.co-button:focus-visible,
+.co-details summary:focus-visible,
+.co-table-wrap:focus-visible {
+  outline: 2px solid #8dbce3;
+  outline-offset: 3px;
+}
+
+/* ตัวเลขสรุปตามตัวกรอง */
+.co-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 16px 0;
+  margin-bottom: 20px;
+  border-top: 1px solid #363636;
+  border-bottom: 1px solid #363636;
+}
+
+.co-summary span {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.co-summary strong {
+  margin: 0 5px;
+  color: #ededed;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ตารางบริษัท */
+.co-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #363636;
+  border-radius: 6px;
+}
+
+.co-table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.co-table th {
+  padding: 14px 16px;
+  border-bottom: 1px solid #414141;
+  background: #252525;
+  color: #bbb;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.co-table td {
+  padding: 18px 16px;
+  border-bottom: 1px solid #303030;
+  vertical-align: top;
+  line-height: 1.8;
+}
+
+.co-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.co-table tbody tr:hover {
+  background: #222;
+}
+
+.co-name {
+  display: block;
+  min-width: 160px;
+  font-weight: 500;
+}
+
+.co-count {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* รายละเอียดตำแหน่งที่กดเปิดได้ */
+.co-details {
+  min-width: 240px;
+}
+
+.co-details summary {
+  width: fit-content;
+  color: #8dbce3;
+  cursor: pointer;
+}
+
+.co-details summary:hover {
+  color: #b9d8f1;
+}
+
+.co-positions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.co-positions li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #363636;
+  font-size: 12px;
+}
+
+.co-positions li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.co-positions li span:last-child {
+  flex-shrink: 0;
+  color: #aaa;
+}
+
+.co-table .co-empty {
+  padding: 40px 20px;
+  color: #aaa;
+  text-align: center;
+}
+
+.co-note {
+  margin-top: 22px;
+}
+
+@media (max-width: 600px) {
+  .co-search {
+    flex-basis: 100%;
+  }
+
+  .co-summary {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
