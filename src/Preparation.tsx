@@ -9,7 +9,14 @@ type Task = {
 
 type Guide = {
   skills: string[]
-  project: string
+  projects: ProjectIdea[]
+}
+
+type ProjectIdea = {
+  title: string
+  summary: string
+  build: string[]
+  showcase: string
 }
 
 const roles = [
@@ -68,83 +75,119 @@ function getGuide(role: string): Guide {
   if (name.includes('full stack') || name.includes('fullstack')) {
     return {
       skills: ['HTML / CSS / JavaScript', 'React', 'API และฐานข้อมูล', 'Git'],
-      project: 'ระบบติดตามการสมัครฝึกงานที่เพิ่ม แก้ไข และบันทึกข้อมูลได้',
+      projects: [
+        { title: 'ระบบติดตามการสมัครฝึกงาน', summary: 'จัดการบริษัท ตำแหน่ง สถานะ และวันนัดหมายในที่เดียว', build: ['ทำ CRUD พร้อม validation และค้นหา/กรอง', 'ออกแบบ API และฐานข้อมูลให้เชื่อมกัน', 'เพิ่มประวัติการเปลี่ยนสถานะหรือ export รายการ'], showcase: 'ภาพหน้าจอ, ER diagram, API examples และบัญชีทดลอง' },
+        { title: 'ระบบจองอุปกรณ์ห้องแล็บ', summary: 'ให้ผู้ใช้ดูอุปกรณ์ว่าง จองเวลา และติดตามรายการของตนเอง', build: ['ทำระบบ role ผู้ใช้และผู้ดูแลแบบง่าย', 'ป้องกันการจองเวลาซ้ำและตรวจสอบข้อมูล', 'แสดงสถานะการจองและประวัติการใช้งาน'], showcase: 'user flow, schema, test cases และคลิปสาธิตการจอง' },
+      ],
     }
   }
 
   if (name.includes('frontend') || name.includes('front-end')) {
     return {
       skills: ['HTML / CSS / JavaScript', 'React', 'Responsive Design', 'Git'],
-      project: 'Dashboard จาก JSON พร้อมค้นหา กรองข้อมูล และรองรับมือถือ',
+      projects: [
+        { title: 'Dashboard สำรวจข้อมูลฝึกงาน', summary: 'ช่วยค้นหาและเปรียบเทียบข้อมูลจากชุดข้อมูลที่ระบุแหล่งที่มา', build: ['ทำตัวกรองที่อัปเดตตัวเลขและกราฟพร้อมกัน', 'ออกแบบตารางให้อ่านได้บนมือถือและใช้แป้นพิมพ์ได้', 'ทำ empty state, loading state และข้อความอธิบายหน่วย'], showcase: 'ภาพหน้าจอหลายขนาด, live demo และตัวอย่างการใช้งานตัวกรอง' },
+        { title: 'เว็บติดตามงานสมัคร', summary: 'ช่วยจัดลำดับบริษัทที่สนใจและจดบันทึกขั้นตอนของตนเอง', build: ['สร้างมุมมองรายการและรายละเอียด', 'จำสถานะบนอุปกรณ์หรือเชื่อม API', 'เพิ่มค้นหาและแจ้งเตือนวันติดตามผล'], showcase: 'user flow, เหตุผลในการออกแบบ และข้อจำกัดของข้อมูลทดลอง' },
+      ],
     }
   }
 
   if (name.includes('backend') || name.includes('back-end')) {
     return {
       skills: ['ภาษาฝั่ง Server', 'HTTP / REST API', 'SQL', 'การตรวจสอบข้อมูล'],
-      project: 'API จัดการข้อมูลฝึกงาน พร้อมฐานข้อมูลและการจัดการข้อผิดพลาด',
+      projects: [
+        { title: 'Internship Directory API', summary: 'ให้บริการข้อมูลบริษัท ตำแหน่ง และรายการสมัครด้วย REST API', build: ['กำหนด schema, validation และ pagination', 'จัดการ error response และ logging ให้สม่ำเสมอ', 'เขียน unit/integration tests สำหรับกรณีสำคัญ'], showcase: 'API documentation, request examples, schema และผลทดสอบ' },
+        { title: 'ระบบยืมคืนอุปกรณ์', summary: 'จัดการรายการอุปกรณ์ คำขอยืม และกำหนดคืน', build: ['สร้าง endpoint ตาม resource และสถานะ', 'ป้องกันข้อมูลไม่ครบและคำขอซ้ำ', 'เพิ่ม filter, sort และ audit trail เบื้องต้น'], showcase: 'sequence diagram, API collection และตัวอย่าง error cases' },
+      ],
     }
   }
 
   if (name.includes('qa') || name.includes('testing')) {
     return {
       skills: ['Test Case', 'Bug Report', 'API Testing', 'Automated Testing'],
-      project: 'แผนทดสอบ Dashboard พร้อมรายงานบั๊กและสคริปต์ทดสอบหลัก',
+      projects: [
+        { title: 'แผนทดสอบ Internship Dashboard', summary: 'แสดงวิธีตรวจความถูกต้องของตัวกรอง ตาราง และตัวเลขสรุป', build: ['เขียน test scenario จาก user flow', 'ทดสอบ edge cases เช่น ไม่มีผลลัพธ์และข้อมูลไม่ครบ', 'ทำ automation สำหรับเส้นทางใช้งานหลัก'], showcase: 'test plan, test cases, bug report และผลรันที่ทำซ้ำได้' },
+        { title: 'ชุดทดสอบ API', summary: 'ตรวจสัญญา API และพฤติกรรมเมื่อรับข้อมูลถูก/ผิดรูปแบบ', build: ['ครอบคลุม success, validation และ permission cases', 'แยก test data และจัดการ cleanup', 'เชื่อมชุดทดสอบกับ CI ให้รันอัตโนมัติ'], showcase: 'coverage ที่ตีความได้, ตัวอย่าง defect และไฟล์ตั้งค่ารันทดสอบ' },
+      ],
     }
   }
 
   if (name.includes('data engineering')) {
     return {
       skills: ['Python', 'SQL', 'ETL', 'การตรวจคุณภาพข้อมูล'],
-      project: 'Pipeline แปลง Excel เป็นฐานข้อมูล พร้อมตรวจข้อมูลซ้ำและค่าว่าง',
+      projects: [
+        { title: 'Pipeline ข้อมูลสมัครฝึกงาน', summary: 'นำเข้าข้อมูลจากไฟล์ตัวอย่าง ตรวจคุณภาพ และจัดเก็บในฐานข้อมูล', build: ['แยกขั้นตอน extract, transform และ load', 'ตรวจ schema, ค่าว่าง, ค่าซ้ำ และชนิดข้อมูล', 'บันทึกจำนวนแถวที่ผ่าน/ไม่ผ่านพร้อมเหตุผล'], showcase: 'data flow diagram, quality report และตัวอย่างข้อมูลก่อน/หลัง' },
+        { title: 'Incremental data loader', summary: 'อัปเดตเฉพาะข้อมูลที่เปลี่ยนและเก็บร่องรอยการประมวลผล', build: ['กำหนด key สำหรับตรวจรายการใหม่/เปลี่ยนแปลง', 'ทำให้รันซ้ำได้โดยไม่สร้างข้อมูลซ้ำ', 'เพิ่ม log, retry และการจัดการความล้มเหลว'], showcase: 'ตัวอย่าง run log, ตารางผลลัพธ์ และวิธี recovery' },
+      ],
     }
   }
 
   if (name.includes('data analy')) {
     return {
       skills: ['Spreadsheet', 'SQL', 'สถิติพื้นฐาน', 'Data Visualization'],
-      project: 'วิเคราะห์ข้อมูลฝึกงาน พร้อมกราฟและคำอธิบายข้อจำกัดของข้อมูล',
+      projects: [
+        { title: 'รายงานสำรวจข้อมูลฝึกงาน', summary: 'ตอบคำถามที่ชัดเจนด้วยตัวเลข กราฟ และการอธิบายขอบเขตข้อมูล', build: ['ตรวจจำนวนแถว ค่าว่าง ค่าซ้ำ และนิยามตัวแปร', 'เลือกกราฟตามคำถามและระบุหน่วย/ตัวหาร', 'สรุปสิ่งที่ข้อมูลบอกได้และบอกไม่ได้'], showcase: 'รายงานสั้น, notebook ที่รันซ้ำได้ และ data dictionary' },
+        { title: 'วิเคราะห์แนวโน้มรายปี', summary: 'เปรียบเทียบกลุ่มหรือช่วงเวลาโดยใช้ฐานคำนวณที่เทียบกันได้', build: ['คำนวณอัตราจาก numerator/denominator ที่ถูกต้อง', 'ตรวจความต่างของขนาดกลุ่มและข้อมูลที่หายไป', 'เพิ่มกราฟและตารางตรวจสอบค่าที่ใช้'], showcase: 'คำถามวิเคราะห์, ขั้นคำนวณ และข้อจำกัดก่อนสรุปผล' },
+      ],
     }
   }
 
   if (name.includes('devops') || name.includes('cloud')) {
     return {
       skills: ['Linux', 'Docker', 'CI/CD', 'Logs และ Monitoring'],
-      project: 'นำเว็บขึ้นใช้งาน พร้อมขั้นตอน build อัตโนมัติและบันทึกวิธี deploy',
+      projects: [
+        { title: 'CI/CD สำหรับเว็บตัวอย่าง', summary: 'ทำให้การตรวจและส่งเว็บรุ่นใหม่ทำซ้ำได้', build: ['สร้าง pipeline สำหรับ lint และ build', 'ทำ Docker image และ deploy ไป environment ทดลอง', 'เพิ่ม health check และขั้นตอน rollback'], showcase: 'pipeline file, architecture diagram และ log การ deploy' },
+        { title: 'ระบบติดตามสถานะบริการ', summary: 'รวบรวม health check และ log เพื่อสังเกตปัญหาของแอปทดลอง', build: ['ตั้ง health endpoint และตรวจตามรอบ', 'กำหนด alert จากเงื่อนไขที่อธิบายได้', 'เขียน runbook สำหรับตรวจและกู้ระบบ'], showcase: 'dashboard จากระบบทดลอง, alert ตัวอย่าง และ runbook' },
+      ],
     }
   }
 
   if (name.includes('cyber') || name.includes('security')) {
     return {
       skills: ['Network', 'Linux', 'Web Security', 'การเขียนรายงานช่องโหว่'],
-      project: 'ฝึกตรวจระบบในแล็บที่ได้รับอนุญาต พร้อมรายงานและแนวทางแก้ไข',
+      projects: [
+        { title: 'Security review เว็บทดลอง', summary: 'ตรวจการตั้งค่าความปลอดภัยของแอปที่สร้างเองหรือแล็บที่ได้รับอนุญาต', build: ['ทำ threat model และระบุขอบเขตการทดสอบ', 'ตรวจ input validation, session และ security headers', 'จัดลำดับความเสี่ยงพร้อมแนวทางแก้และ retest'], showcase: 'ขอบเขตที่ได้รับอนุญาต, หลักฐานแบบปกปิดข้อมูล และ remediation report' },
+        { title: 'Secure coding demo', summary: 'สาธิตช่องโหว่ในแอปจำลองและแสดงวิธีแก้แบบปลอดภัย', build: ['ใช้ข้อมูลสมมติในสภาพแวดล้อม local เท่านั้น', 'เปรียบเทียบโค้ดก่อน/หลังแก้', 'เพิ่ม test เพื่อป้องกัน regression'], showcase: 'โค้ดตัวอย่าง, test ที่ยืนยันการแก้ และบทเรียนที่ได้' },
+      ],
     }
   }
 
   if (name.includes('network') || name.includes('support')) {
     return {
       skills: ['TCP/IP', 'การตั้งค่าเครือข่าย', 'ระบบปฏิบัติการ', 'Troubleshooting'],
-      project: 'จำลองเครือข่ายขนาดเล็ก พร้อมแผนผังและคู่มือแก้ปัญหา',
+      projects: [
+        { title: 'แล็บเครือข่ายสำนักงานขนาดเล็ก', summary: 'จำลองการแบ่งเครือข่ายและการเชื่อมต่อบริการพื้นฐาน', build: ['วาง subnet, routing และแผน IP', 'ทดสอบ DNS, DHCP และการเชื่อมต่อ', 'บันทึกจุดตรวจและวิธีแก้เมื่อใช้งานไม่ได้'], showcase: 'network diagram, configuration ที่ลบข้อมูลลับแล้ว และ test log' },
+        { title: 'คู่มือวิเคราะห์ปัญหา IT', summary: 'ทำ runbook สำหรับอาการที่พบบ่อยและแนวทางแยกสาเหตุ', build: ['จัดลำดับคำถามและขั้นตอนตรวจทีละข้อ', 'แนบคำสั่งตรวจสอบพร้อมผลที่คาดหวัง', 'ระบุเงื่อนไขส่งต่อและวิธีบันทึก incident'], showcase: 'runbook, decision tree และเคสจำลองที่ทดลองทำตาม' },
+      ],
     }
   }
 
   if (name.includes('mobile')) {
     return {
       skills: ['เครื่องมือพัฒนาแอปมือถือ', 'UI และ Navigation', 'API', 'State'],
-      project: 'แอปติดตามการสมัครฝึกงาน พร้อมรายการ รายละเอียด และบันทึกสถานะ',
+      projects: [
+        { title: 'แอปติดตามการสมัคร', summary: 'เก็บรายการบริษัทที่สนใจและอัปเดตสถานะการสมัครได้จากมือถือ', build: ['ทำหน้ารายการ รายละเอียด และแบบฟอร์มเพิ่มข้อมูล', 'รองรับ loading, error และ offline state', 'ออกแบบให้ใช้ได้ด้วยมือเดียวและตัวอักษรอ่านง่าย'], showcase: 'ภาพหน้าจอ, flow การใช้งาน และวิดีโอสาธิตบน emulator' },
+        { title: 'แอปเช็กลิสต์เตรียมสัมภาษณ์', summary: 'จัดหมวดหัวข้อฝึกและบันทึกความคืบหน้าเฉพาะผู้ใช้', build: ['แยกหมวดและค้นหารายการได้', 'บันทึกสถานะในเครื่องหรือซิงก์ผ่าน API', 'เพิ่ม accessibility labels และทดสอบหลายขนาดจอ'], showcase: 'หน้าจอจริง, usability notes และวิธีจัดเก็บข้อมูล' },
+      ],
     }
   }
 
   if (name.includes('ai') || name.includes('machine') || name.includes('ml')) {
     return {
       skills: ['Python', 'การเตรียมข้อมูล', 'Machine Learning', 'การประเมินโมเดล'],
-      project: 'ทดลองโมเดลกับชุดข้อมูลสาธารณะ แยกข้อมูลฝึกและทดสอบ พร้อมรายงานผล',
+      projects: [
+        { title: 'โมเดลจำแนกข้อมูลสาธารณะ', summary: 'เปรียบเทียบ baseline กับโมเดลที่เลือกและรายงานความคลาดเคลื่อน', build: ['ตรวจคุณภาพข้อมูลและป้องกัน data leakage', 'แยก train/validation/test อย่างเหมาะสม', 'ใช้ metric ให้ตรงกับโจทย์และอธิบายข้อจำกัด'], showcase: 'notebook, model card, confusion matrix และตัวอย่างความผิดพลาด' },
+        { title: 'เว็บทดลอง inference', summary: 'ให้ผู้ใช้ทดลองป้อนข้อมูลตัวอย่างและดูผลโมเดลพร้อมคำอธิบาย', build: ['ทำ preprocessing ให้ตรงกับตอน train', 'แสดง confidence/ข้อจำกัดอย่างไม่กล่าวเกินจริง', 'ทดสอบ input ผิดรูปแบบและ latency เบื้องต้น'], showcase: 'demo, model card, input/output examples และข้อควรระวัง' },
+      ],
     }
   }
 
   return {
     skills: ['พื้นฐานของสายงาน', 'Git', 'การแก้ปัญหา', 'การสื่อสาร'],
-    project: 'เลือกปัญหาขนาดเล็ก ทำผลงานให้จบ และเขียนอธิบายวิธีทำ',
+    projects: [
+      { title: 'เครื่องมือแก้ปัญหาเล็ก ๆ', summary: 'เลือกปัญหาจริงใกล้ตัวและทำต้นแบบที่คนอื่นทดลองใช้ได้', build: ['เขียนโจทย์และผู้ใช้เป้าหมายให้ชัด', 'ทำรุ่นเล็กให้จบก่อนเพิ่มฟีเจอร์', 'ทดสอบกับกรณีใช้งานจริงและแก้จาก feedback'], showcase: 'ภาพการใช้งาน, วิธีติดตั้ง, ผลทดสอบ และสิ่งที่เรียนรู้' },
+      { title: 'ผลงานต่อยอดวิชาเรียน', summary: 'นำสิ่งที่เรียนมาปรับเป็นชิ้นงานที่มีโจทย์และผลลัพธ์ตรวจสอบได้', build: ['ระบุส่วนที่พัฒนาต่อจากโจทย์เดิม', 'อธิบายบทบาทของตนเองและการตัดสินใจ', 'เพิ่ม test หรือการวัดผลตามลักษณะงาน'], showcase: 'โจทย์เดิม/สิ่งที่เพิ่ม, demo และสรุปข้อจำกัด' },
+    ],
   }
 }
 
@@ -228,13 +271,41 @@ export default function Preparation() {
             ))}
           </div>
 
-          <h3>ไอเดียโปรเจกต์สำหรับ Portfolio</h3>
-          <p className="prep-project">{guide.project}</p>
+          <div className="prep-project-heading">
+            <div>
+              <h3>ไอเดียโปรเจกต์สำหรับ Portfolio</h3>
+              <p className="prep-muted">เลือกทำหนึ่งชิ้นให้จบ หรือปรับโจทย์ให้เป็นผลงานของตัวเอง</p>
+            </div>
+            <span>{guide.projects.length} แนวทาง</span>
+          </div>
 
-          <p className="prep-muted">
-            ใส่คำอธิบายปัญหา วิธีทำ หน้าที่ของตนเอง
-            วิธีทดสอบ และสิ่งที่อยากปรับปรุงใน README
-          </p>
+          <div className="prep-project-grid">
+            {guide.projects.map((project, index) => (
+              <article className="prep-project-card" key={project.title}>
+                <p className="prep-project-index">PROJECT 0{index + 1}</p>
+                <h4>{project.title}</h4>
+                <p className="prep-project-summary">{project.summary}</p>
+                <h5>แนวทางต่อยอด</h5>
+                <ul>
+                  {project.build.map((step) => <li key={step}>{step}</li>)}
+                </ul>
+                <div className="prep-project-showcase">
+                  <strong>สิ่งที่นำเสนอได้</strong>
+                  <p>{project.showcase}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <aside className="prep-portfolio-tip">
+            <strong>ทำให้คนดูเข้าใจผลงานได้เร็ว</strong>
+            <ul>
+              <li>เล่าโจทย์และผู้ใช้ที่ต้องการช่วย</li>
+              <li>บอกส่วนที่คุณลงมือทำและเหตุผลที่เลือกวิธีนั้น</li>
+              <li>แนบภาพหรือ demo พร้อมวิธีติดตั้งและทดสอบ</li>
+              <li>สรุปข้อจำกัด สิ่งที่เรียนรู้ และสิ่งที่จะพัฒนาต่อ</li>
+            </ul>
+          </aside>
         </section>
 
         <section className="prep-panel">

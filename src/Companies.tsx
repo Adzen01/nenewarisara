@@ -3,6 +3,14 @@ import dataset from './data/internships.json'
 import './Companies.css'
 
 const students = dataset.students
+const companyLogos: Record<string, string> = {
+  AIS: '/company-logos/ais.png',
+  'CDG Systems': '/company-logos/cdg-systems.png',
+  'Gosoft (Thailand)': '/company-logos/gosoft.png',
+  KBTG: '/company-logos/kbtg.jpg',
+  'LINE MAN Wongnai': '/company-logos/line-man-wongnai.jpg',
+  'SCB TechX': '/company-logos/scb-techx.jpg',
+}
 
 const years = [
   ...new Set(students.map((student) => student.academicYearBE)),
@@ -204,7 +212,21 @@ export default function Companies() {
             {companies.map((company) => (
               <tr key={company.name}>
                 <td>
-                  <strong className="co-name">{company.name}</strong>
+                  <div className="co-company-cell">
+                    {companyLogos[company.name] ? (
+                      <img
+                        className="co-logo"
+                        src={companyLogos[company.name]}
+                        alt={`${company.name} logo`}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="co-logo-fallback" aria-hidden="true">
+                        {company.name.slice(0, 1)}
+                      </span>
+                    )}
+                    <strong className="co-name">{company.name}</strong>
+                  </div>
                 </td>
 
                 <td>

@@ -59,7 +59,8 @@ function App() {
               }
               onClick={() => setActivePage(page.id)}
             >
-              {page.label}
+              <span className="nav-index">0{pages.indexOf(page) + 1}</span>
+              <span>{page.label}</span>
             </button>
           ))}
         </nav>

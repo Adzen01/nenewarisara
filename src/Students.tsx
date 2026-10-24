@@ -2,6 +2,22 @@ import { useState } from 'react'
 import dataset from './data/internships.json'
 import './Students.css'
 
+const defaultDirectoryAvatar = '/student-directory-avatar.jpg'
+const defaultDirectoryCover = '/student-directory-cover.jpg'
+
+async function optimizeImage(file: File, maxSize: number) {
+  const image = await createImageBitmap(file)
+  const scale = Math.min(1, maxSize / Math.max(image.width, image.height))
+  const canvas = document.createElement('canvas')
+  canvas.width = Math.max(1, Math.round(image.width * scale))
+  canvas.height = Math.max(1, Math.round(image.height * scale))
+  const context = canvas.getContext('2d')
+  if (!context) throw new Error('Canvas is unavailable')
+  context.drawImage(image, 0, 0, canvas.width, canvas.height)
+  image.close()
+  return canvas.toDataURL('image/jpeg', 0.82)
+}
+
 const students = dataset.students
 
 const years = [...new Set(
@@ -22,6 +38,22 @@ export default function Students() {
   const [status, setStatus] = useState('all')
   const [role, setRole] = useState('all')
   const [page, setPage] = useState(1)
+  const [selectedId, setSelectedId] = useState(students[0]?.recordId ?? '')
+  const [directoryAvatar, setDirectoryAvatar] = useState(() => {
+    try { return localStorage.getItem('ce-student-directory-avatar-v1') || defaultDirectoryAvatar }
+    catch { return defaultDirectoryAvatar }
+  })
+  const [directoryCover, setDirectoryCover] = useState(() => {
+    try { return localStorage.getItem('ce-student-directory-cover-v1') || defaultDirectoryCover }
+    catch { return defaultDirectoryCover }
+  })
+  const [imageError, setImageError] = useState('')
+  const [avatars, setAvatars] = useState<Record<string, string>>(() => {
+    try {
+      const saved = localStorage.getItem('ce-student-avatars-v1')
+      return saved ? JSON.parse(saved) as Record<string, string> : {}
+    } catch { return {} }
+  })
 
   const keyword = search.trim().toLocaleLowerCase('th')
 
@@ -64,6 +96,45 @@ export default function Students() {
     startIndex,
     startIndex + pageSize,
   )
+  const selectedStudent = visibleStudents.find((student) => student.recordId === selectedId)
+    ?? visibleStudents[0]
+
+  async function saveAvatar(file?: File) {
+    if (!selectedStudent || !file || !file.type.startsWith('image/')) return
+    try {
+      const image = await optimizeImage(file, 512)
+      const next = { ...avatars, [selectedStudent.recordId]: image }
+      localStorage.setItem('ce-student-avatars-v1', JSON.stringify(next))
+      setAvatars(next)
+      setImageError('')
+    } catch {
+      setImageError('บันทึกรูปไม่สำเร็จ ลองเลือกรูปอื่นหรือรูปที่มีขนาดเล็กลง')
+    }
+  }
+
+  async function saveDirectoryImage(file: File | undefined, type: 'avatar' | 'cover') {
+    if (!file || !file.type.startsWith('image/')) return
+    try {
+      const image = await optimizeImage(file, type === 'cover' ? 1800 : 512)
+      const key = type === 'cover' ? 'ce-student-directory-cover-v1' : 'ce-student-directory-avatar-v1'
+      localStorage.setItem(key, image)
+      if (type === 'cover') setDirectoryCover(image)
+      else setDirectoryAvatar(image)
+      setImageError('')
+    } catch {
+      setImageError('บันทึกรูปไม่สำเร็จ ลองเลือกรูปอื่นหรือรูปที่มีขนาดเล็กลง')
+    }
+  }
+
+  function removeAvatar() {
+    if (!selectedStudent) return
+    const next = { ...avatars }
+    delete next[selectedStudent.recordId]
+    try {
+      localStorage.setItem('ce-student-avatars-v1', JSON.stringify(next))
+      setAvatars(next)
+    } catch { setAvatars(next) }
+  }
 
   function resetFilters() {
     setSearch('')
@@ -76,11 +147,31 @@ export default function Students() {
   return (
     <section className="students-page" aria-labelledby="students-title">
       <div className="st-heading">
-        <h2 id="students-title">รายชื่อนิสิต</h2>
+        <h2 id="students-title">รายการนิสิต</h2>
         <p aria-live="polite">
           พบ {filteredStudents.length} จากทั้งหมด {students.length} รายการ
         </p>
       </div>
+
+      <section className="st-notion-page" aria-label="หน้าปกไดเรกทอรีนิสิต">
+        <div className="st-cover" style={{ backgroundImage: `url("${directoryCover}")` }}>
+          <label className="st-cover-edit" htmlFor="directory-cover-upload">เปลี่ยนภาพปก</label>
+          <input id="directory-cover-upload" className="st-visually-hidden" type="file" accept="image/*" onChange={(event) => { void saveDirectoryImage(event.target.files?.[0], 'cover'); event.currentTarget.value = '' }} />
+        </div>
+        <div className="st-page-identity">
+          <div className="st-page-avatar"><img src={directoryAvatar} alt="ภาพประจำหน้าไดเรกทอรี" /></div>
+          <div className="st-page-heading">
+            <p className="st-page-eyebrow">CE INTERNSHIP / STUDENT DIRECTORY</p>
+            <h3>รายชื่อนิสิตที่ได้ฝึกงาน</h3>
+            <p>พื้นที่รวบรวมข้อมูลนิสิตและสถานะการสมัครฝึกงาน</p>
+          </div>
+          <div className="st-page-image-actions">
+            <label className="st-button" htmlFor="directory-avatar-upload">เปลี่ยนภาพประจำหน้า</label>
+            <input id="directory-avatar-upload" className="st-visually-hidden" type="file" accept="image/*" onChange={(event) => { void saveDirectoryImage(event.target.files?.[0], 'avatar'); event.currentTarget.value = '' }} />
+          </div>
+        </div>
+      </section>
+      {imageError && <p className="st-image-error" role="status">{imageError}</p>}
 
       <div className="st-filters">
         <div className="st-field st-search">
@@ -177,12 +268,13 @@ export default function Students() {
               <th scope="col">สถานประกอบการ</th>
               <th scope="col">ตำแหน่งฝึกงาน</th>
               <th scope="col">จังหวัด</th>
+              <th scope="col">รายละเอียด</th>
             </tr>
           </thead>
 
           <tbody>
             {visibleStudents.map((student) => (
-              <tr key={student.recordId}>
+              <tr key={student.recordId} className={selectedStudent?.recordId === student.recordId ? 'is-selected' : ''}>
                 <td>
                   <span className="st-name">
                     {student.prefix} {student.firstName} {student.lastName}
@@ -214,12 +306,13 @@ export default function Students() {
                 <td>{student.placement?.company || '—'}</td>
                 <td>{student.placement?.position || '—'}</td>
                 <td>{student.placement?.province || '—'}</td>
+                <td><button className="st-link" type="button" onClick={() => setSelectedId(student.recordId)}>ดูรายละเอียด</button></td>
               </tr>
             ))}
 
             {visibleStudents.length === 0 && (
               <tr>
-                <td colSpan={8} className="st-empty">
+                <td colSpan={9} className="st-empty">
                   ไม่พบข้อมูลที่ตรงกับเงื่อนไข ลองเปลี่ยนหรือล้างตัวกรอง
                 </td>
               </tr>
@@ -227,6 +320,36 @@ export default function Students() {
           </tbody>
         </table>
       </div>
+
+      {selectedStudent && <section className="st-profile" aria-label="รายละเอียดนิสิตที่เลือก">
+        <div className="st-profile-person">
+          <div className="st-avatar">
+            {avatars[selectedStudent.recordId]
+              ? <img src={avatars[selectedStudent.recordId]} alt={`รูปโปรไฟล์ ${selectedStudent.firstName} ${selectedStudent.lastName}`} />
+              : <img src={directoryAvatar} alt={`ภาพตัวแทน ${selectedStudent.firstName} ${selectedStudent.lastName}`} />}
+          </div>
+          <div>
+            <p className="st-profile-id">{selectedStudent.studentId}</p>
+            <h3>{selectedStudent.prefix} {selectedStudent.firstName} {selectedStudent.lastName}</h3>
+            <span className={`st-status ${selectedStudent.accepted ? 'is-accepted' : 'is-pending'}`}>
+              {selectedStudent.accepted ? 'ได้ที่ฝึกงานแล้ว' : 'ยังไม่ได้ที่ฝึกงาน'}
+            </span>
+          </div>
+        </div>
+        <dl className="st-profile-facts">
+          <div><dt>ปีฝึกงาน</dt><dd>{selectedStudent.academicYearBE}</dd></div>
+          <div><dt>สายงานที่สนใจ</dt><dd>{selectedStudent.interestedRole || '—'}</dd></div>
+          <div><dt>สถานประกอบการ</dt><dd>{selectedStudent.placement?.company || '—'}</dd></div>
+          <div><dt>ตำแหน่งฝึกงาน</dt><dd>{selectedStudent.placement?.position || '—'}</dd></div>
+          <div><dt>จังหวัด</dt><dd>{selectedStudent.placement?.province || '—'}</dd></div>
+        </dl>
+        <div className="st-avatar-actions">
+          <label className="st-button st-upload" htmlFor="student-avatar">เปลี่ยนรูป</label>
+          <input id="student-avatar" type="file" accept="image/*" onChange={(event) => { saveAvatar(event.target.files?.[0]); event.currentTarget.value = '' }} />
+          {avatars[selectedStudent.recordId] && <button className="st-button" type="button" onClick={removeAvatar}>คืนรูปเริ่มต้น</button>}
+          <small>รูปนี้บันทึกไว้ในเบราว์เซอร์เครื่องนี้</small>
+        </div>
+      </section>}
 
       <div className="st-pagination">
         <p>
