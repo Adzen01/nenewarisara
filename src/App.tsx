@@ -4,8 +4,10 @@ import Overview from './Overview'
 import Students from './Students'
 import Companies from './Companies'
 import Preparation from './Preparation'
-import { BuildingIcon, ChecklistIcon, OverviewIcon, StudentsIcon } from './components/Icons'
+import { BuildingIcon, ChecklistIcon, MoonIcon, OverviewIcon, StudentsIcon, SunIcon } from './components/Icons'
 import { formatNumber, students, yearRange } from './lib/internshipStats'
+import { useTheme } from './lib/theme'
+import { profile } from './profile'
 import './App.css'
 
 type PageId = 'overview' | 'students' | 'companies' | 'preparation'
@@ -26,6 +28,7 @@ function readPageFromHash(): PageId {
 function App() {
   const [activePage, setActivePage] = useState<PageId>(readPageFromHash)
   const focusHeadingOnChange = useRef(false)
+  const [theme, toggleTheme] = useTheme()
 
   useEffect(() => {
     function handleHashChange() {
@@ -54,9 +57,23 @@ function App() {
       }}>ข้ามไปยังเนื้อหา</a>
 
       <aside className="sidebar">
-        <div className="brand">
-          <strong>CE Internship</strong>
-          <span>ข้อมูลฝึกงาน วศ.คอมพิวเตอร์</span>
+        <div className="brand-row">
+          <div className="brand">
+            <img className="brand-avatar" src={profile.avatarSrc} alt="" width="28" height="28" />
+            <div className="brand-text">
+              <strong>CE Internship</strong>
+              <span>ข้อมูลฝึกงาน วศ.คอมพิวเตอร์</span>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="icon-button theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'เปลี่ยนเป็นธีมสว่าง' : 'เปลี่ยนเป็นธีมมืด'}
+            title={theme === 'dark' ? 'ธีมสว่าง' : 'ธีมมืด'}
+          >
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </button>
         </div>
 
         <nav className="navigation" aria-label="เมนูหลัก">

@@ -24,7 +24,7 @@
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
   background: var(--ink);
-  color: #ffffff;
+  color: var(--canvas);
   transform: translateY(-160%);
 }
 .skip-link:focus { transform: none; }
@@ -38,9 +38,13 @@
   height: 100vh;
   padding: var(--space-6) 14px var(--space-5);
 }
-.brand { display: flex; flex-direction: column; gap: 2px; padding: 0 10px; }
-.brand strong { font-size: 15px; font-weight: 700; }
+.brand-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+.brand { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 0 0 0 10px; }
+.brand-avatar { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 6px; object-fit: cover; }
+.brand-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.brand strong { font-size: 15px; font-weight: 700; line-height: 1.3; }
 .brand span { color: var(--ink-3); font-size: var(--fs-xs); }
+.theme-toggle { width: 36px; height: 36px; flex-basis: 36px; }
 
 .navigation { display: flex; flex-direction: column; gap: var(--space-1); }
 .nav-link {
@@ -70,7 +74,13 @@
   font-size: var(--fs-xs);
 }
 
-.main-content { min-width: 0; max-width: 1440px; padding: 28px clamp(16px, 3vw, 40px) 40px; }
+.main-content {
+  --pad-top: 28px;
+  --pad-x: clamp(16px, 3vw, 40px);
+  min-width: 0;
+  max-width: 1440px;
+  padding: var(--pad-top) var(--pad-x) 40px;
+}
 .main-content:focus { outline: none; }
 
 @media (max-width: 1000px) {
@@ -88,16 +98,18 @@
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
-  .brand { flex: 0 0 auto; padding: 0; }
+  .brand-row { flex: 0 0 auto; }
+  .brand { padding: 0; }
   .brand span, .sidebar-footer { display: none; }
   .navigation { flex-direction: row; overflow-x: auto; }
   .nav-link { white-space: nowrap; }
-  .main-content { padding: var(--space-6) var(--space-6) var(--space-8); }
+  .main-content { --pad-top: var(--space-6); --pad-x: var(--space-6); padding-bottom: var(--space-8); }
 }
 
 @media (max-width: 560px) {
   .sidebar { flex-direction: column; align-items: stretch; gap: 6px; padding: 10px var(--space-2) 6px; }
   .brand { padding: 0 var(--space-2); }
+  .brand-row { padding-right: var(--space-1); }
   .navigation { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px; overflow: visible; }
   .nav-link {
     flex-direction: column;
@@ -110,5 +122,29 @@
     text-align: center;
     white-space: normal;
   }
-  .main-content { padding: var(--space-5) var(--space-4) var(--space-6); }
+  .main-content { --pad-top: var(--space-5); --pad-x: var(--space-4); padding-bottom: var(--space-6); }
+}
+
+/* ---------- Profile cover (แบบหน้า Notion) ---------- */
+.profile-cover { margin: calc(-1 * var(--pad-top)) calc(-1 * var(--pad-x)) 0; }
+.profile-cover-image { height: clamp(150px, 22vw, 260px); overflow: hidden; background: var(--surface-muted); }
+.profile-cover-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.profile-identity { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); padding: 0 var(--pad-x); margin-top: -56px; }
+.profile-avatar {
+  width: 112px;
+  height: 112px;
+  flex: 0 0 112px;
+  border: 4px solid var(--canvas);
+  border-radius: var(--radius);
+  background: var(--surface);
+  object-fit: cover;
+}
+.profile-text { display: flex; flex-direction: column; min-width: 0; }
+.profile-title { font-size: var(--fs-xl); font-weight: 700; line-height: 1.35; }
+.profile-subtitle { color: var(--ink-3); font-size: var(--fs-sm); }
+
+@media (max-width: 560px) {
+  .profile-identity { margin-top: -40px; }
+  .profile-avatar { width: 80px; height: 80px; flex-basis: 80px; border-width: 3px; }
+  .profile-title { font-size: var(--fs-lg); }
 }

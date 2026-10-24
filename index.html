@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" />
     <title>CE Internship Dashboard</title>
+    <script>
+      // ตั้งธีมก่อนวาดหน้า เพื่อไม่ให้จอขาวกะพริบ · ค่าเริ่มต้นเป็นธีมมืด
+      try {
+        var savedTheme = localStorage.getItem('ce-theme')
+        document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark'
+      } catch (error) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

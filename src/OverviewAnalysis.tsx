@@ -192,7 +192,7 @@ function RateBars({ groups, overall, label }: { groups: RateGroup[]; overall: nu
 
 // สีไล่ระดับม่วงเดียว อ่อน → เข้ม ตามค่าเฉลี่ย 0–5
 function heatColor(value: number) {
-  return `color-mix(in srgb, var(--accent) ${Math.round(8 + (value / 5) * 82)}%, #ffffff)`
+  return `color-mix(in srgb, var(--accent) ${Math.round(8 + (value / 5) * 82)}%, var(--heat-base))`
 }
 
 function SkillHeatmap({ rows, roles, highlightRole }: { rows: Student[]; roles: string[]; highlightRole: string }) {

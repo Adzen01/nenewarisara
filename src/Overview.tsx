@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import PageHeader from './components/PageHeader'
+import ProfileCover from './components/ProfileCover'
 import OverviewAnalysis from './OverviewAnalysis'
 import { CompareIcon, FilterIcon } from './components/Icons'
 import {
@@ -239,6 +240,7 @@ export default function Overview() {
 
   return (
     <section className="page overview" aria-labelledby="overview-title">
+      <ProfileCover />
       <PageHeader
         id="overview-title"
         title="ภาพรวมการฝึกงาน"

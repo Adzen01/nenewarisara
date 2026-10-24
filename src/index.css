@@ -22,6 +22,11 @@
   --grid: #eceaf3;
   --danger: #a3261e;
   --info-soft: #f3f1fb;
+  --on-accent: #ffffff;
+  --heat-base: #ffffff;
+  --logo-bg: #ffffff;
+  --shadow: 0 6px 18px rgb(33 28 56 / 14%);
+  --backdrop: rgb(33 28 56 / 40%);
 
   --font: "Noto Sans Thai", "Leelawadee UI", Tahoma, sans-serif;
   --fs-xs: 12px;
@@ -52,6 +57,36 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ธีมมืดโทน Notion: พื้นเทาดำเป็นกลาง ใช้ม่วงเป็นสีเน้นเหมือนเดิม
+   สีสถานะ #8466ea / #c48529 ผ่านการตรวจความต่างสำหรับผู้มีภาวะบกพร่องการเห็นสีบนพื้นมืด */
+:root[data-theme="dark"] {
+  --canvas: #191919;
+  --surface: #202020;
+  --surface-muted: #262626;
+  --line: #2f2f2f;
+  --line-strong: #404040;
+  --ink: #e8e7e4;
+  --ink-2: #b5b3ad;
+  --ink-3: #8e8c87;
+  --accent: #8466ea;
+  --accent-hover: #9479f0;
+  --accent-ink: #b9a7ff;
+  --accent-soft: #2c2640;
+  --accent-2: #6553b4;
+  --accent-3: #443a72;
+  --pending: #c48529;
+  --pending-ink: #e8b468;
+  --pending-soft: #3a2e1b;
+  --track: #2d2d2d;
+  --grid: #2a2a2a;
+  --danger: #ff8a80;
+  --info-soft: #25232e;
+  --heat-base: #202020;
+  --shadow: 0 8px 24px rgb(0 0 0 / 45%);
+  --backdrop: rgb(0 0 0 / 60%);
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -226,7 +261,7 @@ img { max-width: 100%; }
   font-variant-numeric: tabular-nums;
 }
 .segmented button:hover { background: var(--accent-soft); color: var(--ink); }
-.segmented button[aria-pressed="true"] { background: var(--accent); color: #ffffff; font-weight: 600; }
+.segmented button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); font-weight: 600; }
 
 .button {
   display: inline-flex;
@@ -242,7 +277,7 @@ img { max-width: 100%; }
   white-space: nowrap;
 }
 .button:disabled { opacity: .45; cursor: not-allowed; }
-.button-primary { background: var(--accent); color: #ffffff; }
+.button-primary { background: var(--accent); color: var(--on-accent); }
 .button-primary:hover:not(:disabled) { background: var(--accent-hover); }
 .button-secondary { border-color: var(--line-strong); background: var(--surface); color: var(--ink); }
 .button-secondary:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
@@ -320,7 +355,7 @@ img { max-width: 100%; }
   background: var(--surface);
   color: var(--ink);
 }
-.drawer::backdrop { background: rgb(33 28 56 / 40%); }
+.drawer::backdrop { background: var(--backdrop); }
 .drawer[open] { animation: drawer-in 180ms ease-out; }
 @keyframes drawer-in { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
 .drawer-panel { display: flex; flex-direction: column; height: 100%; }

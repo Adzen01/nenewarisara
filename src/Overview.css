@@ -109,7 +109,7 @@
 .sc-frame text { font-family: var(--font); }
 .sc-axis-title { fill: var(--ink-2); font-size: var(--fs-xs); }
 .sc-hit { fill: transparent; cursor: pointer; }
-.sc-dot { stroke: #ffffff; stroke-width: 1.5; fill-opacity: .82; pointer-events: none; }
+.sc-dot { stroke: var(--surface); stroke-width: 1.5; fill-opacity: .82; pointer-events: none; }
 .sc-accepted { fill: var(--accent); }
 .sc-pending { fill: var(--pending); }
 .sc-tooltip {
@@ -124,7 +124,7 @@
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
   background: var(--surface);
-  box-shadow: 0 6px 18px rgb(33 28 56 / 14%);
+  box-shadow: var(--shadow);
   color: var(--ink-2);
   font-size: var(--fs-xs);
   pointer-events: none;
@@ -148,7 +148,7 @@
 .rt-none { color: var(--ink-3); font-size: var(--fs-xs); }
 
 .hm-legend { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-2); color: var(--ink-2); font-size: var(--fs-xs); }
-.hm-gradient { display: inline-block; width: 120px; height: 10px; border-radius: 3px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, #fff), var(--accent) 90%); }
+.hm-gradient { display: inline-block; width: 120px; height: 10px; border-radius: 3px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, var(--heat-base)), var(--accent) 90%); }
 .hm-empty-key { display: inline-block; width: 14px; height: 10px; margin-left: var(--space-3); border: 1px dashed var(--line-strong); border-radius: 3px; background: var(--surface-muted); }
 .hm-scroll { border: 1px solid var(--line); border-radius: var(--radius-sm); }
 .hm-table { width: 100%; min-width: 820px; border-collapse: separate; border-spacing: 2px; font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
@@ -157,7 +157,7 @@
 .hm-table tbody th { position: sticky; left: 0; z-index: 1; min-width: 170px; padding: 6px var(--space-2); background: var(--surface); font-weight: 500; text-align: left; line-height: 1.35; }
 .hm-table tbody th small { display: block; color: var(--ink-3); font-size: 11px; }
 .hm-cell { position: relative; min-width: 52px; padding: 8px 4px; border-radius: 4px; color: var(--ink); text-align: center; }
-.hm-cell.is-dark { color: #ffffff; font-weight: 600; }
+.hm-cell.is-dark { color: var(--on-accent); font-weight: 600; }
 .hm-missing { border: 1px dashed var(--line-strong); background: var(--surface-muted); color: var(--ink-3); }
 .hm-table tr.is-highlight th { color: var(--accent-ink); font-weight: 700; }
 .hm-table tr.is-highlight th::before { content: "▸ "; }
