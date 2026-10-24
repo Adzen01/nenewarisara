@@ -27,6 +27,14 @@ npm run build          # type-check + build ไปที่ dist/
 
 ต้องใช้ Node 22.12 ขึ้นไป (ชุดทดสอบและสคริปต์ข้อมูลรันไฟล์ TypeScript ด้วย `--experimental-strip-types`)
 
+## Deploy ด้วย Netlify Drop
+
+1. `npm run build` จะได้โฟลเดอร์ `dist/`
+2. เปิด https://app.netlify.com/drop แล้วลากโฟลเดอร์ `dist` (ทั้งโฟลเดอร์) ไปวาง
+3. รอสักครู่ Netlify จะให้ลิงก์เว็บ
+
+`public/_redirects` ถูกคัดลอกเข้า `dist/` อัตโนมัติ เพื่อให้รีเฟรชหน้าใดก็ไม่ขึ้น 404
+
 ## หน้าเว็บ
 
 | หน้า | สิ่งที่ทำได้ |
