@@ -52,12 +52,58 @@
 .prep-tasks label { font-size: var(--fs-base); line-height: 1.6; cursor: pointer; }
 .prep-tasks input:checked + label { color: var(--ink-3); text-decoration: line-through; }
 
+/* ---------- Skill Gap ---------- */
+.gap-layout { display: grid; grid-template-columns: minmax(300px, 1fr) minmax(0, 1.5fr); align-items: start; gap: var(--space-4); }
+.gap-manual { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); gap: var(--space-3); }
+.gap-criteria { padding: var(--space-3); border-radius: var(--radius-sm); background: var(--info-soft); font-size: var(--fs-sm); }
+.gap-criteria summary { color: var(--accent-ink); font-weight: 600; cursor: pointer; }
+.gap-criteria[open] summary { margin-bottom: var(--space-2); }
+.gap-criteria-list { display: flex; flex-direction: column; margin: var(--space-2) 0; padding: 0; list-style: none; }
+.gap-criteria-list li { display: flex; justify-content: space-between; gap: var(--space-3); padding: 4px 0; border-bottom: 1px solid var(--line); }
+.gap-levels { display: flex; flex-direction: column; gap: 4px; margin: 0; }
+.gap-levels dt { font-weight: 600; }
+.gap-levels dd { margin: 0 0 4px; color: var(--ink-2); font-size: var(--fs-xs); }
+
+.gap-summary { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); margin: 0; }
+.gap-summary dt { color: var(--ink-2); font-size: var(--fs-sm); }
+.gap-summary dd { margin: 0; font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.gap-summary dd small { margin-left: var(--space-1); color: var(--ink-2); font-size: var(--fs-sm); font-weight: 500; }
+.gap-legend { display: flex; gap: var(--space-4); color: var(--ink-2); font-size: var(--fs-xs); }
+.gap-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.gap-key-current { display: inline-block; width: 14px; height: 8px; border-radius: 2px; background: var(--accent); }
+.gap-key-target { display: inline-block; width: 2px; height: 12px; background: var(--ink); }
+
+.gap-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+.gap-table th, .gap-table td { padding: 8px 6px; border-bottom: 1px solid var(--line); text-align: left; }
+.gap-table thead th { color: var(--ink-3); font-size: var(--fs-xs); font-weight: 600; }
+.gap-table tbody th { font-weight: 500; }
+.gap-table tbody tr:last-child > * { border-bottom: 0; }
+.gap-meter-cell { width: 34%; min-width: 90px; }
+.gap-meter { position: relative; display: block; height: 10px; border-radius: 0 3px 3px 0; background: var(--track); }
+.gap-current { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+.gap-target { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--ink); }
+
+.gap-badge { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: var(--fs-xs); font-weight: 600; white-space: nowrap; }
+.gap-badge.is-met { background: var(--accent-soft); color: var(--accent-ink); }
+.gap-badge.is-gap { background: var(--pending-soft); color: var(--pending-ink); }
+.gap-badge.is-missing { border: 1px dashed var(--line-strong); color: var(--ink-3); }
+
+.gap-priorities { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--space-3); margin: 0; padding: 0; list-style: none; }
+.gap-priorities > li { padding: var(--space-3) var(--space-4); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.gap-priorities > li.is-top { border-color: var(--accent-2); background: var(--surface-muted); }
+.gap-priority-head { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-2); }
+.gap-rank { display: inline-grid; width: 24px; height: 24px; place-items: center; border-radius: 50%; background: var(--accent); color: #ffffff; font-size: var(--fs-xs); font-weight: 700; }
+
 @media (max-width: 1100px) {
+  .gap-layout { grid-template-columns: minmax(0, 1fr); }
   .prep-layout { grid-template-columns: minmax(0, 1fr); }
   .prep-checklist { position: static; }
 }
 
 @media (max-width: 560px) {
+  .gap-table th, .gap-table td { padding: 8px 4px; }
+  .gap-meter-cell, .gap-table thead th:nth-child(4) { display: none; }
+  .gap-badge { white-space: normal; }
   .prep-role-field { min-width: 0; flex-basis: 100%; }
   .prep-tip ul { columns: 1; }
 }

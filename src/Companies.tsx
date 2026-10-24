@@ -4,6 +4,7 @@ import DetailDrawer from './components/DetailDrawer'
 import EmptyState from './components/EmptyState'
 import { ChevronRightIcon, InfoIcon, SearchIcon } from './components/Icons'
 import { formatNumber, students, uniqueSorted, years } from './lib/internshipStats'
+import { positionRole, roleBenchmarks, skillDefinitions } from './lib/skills'
 import './Companies.css'
 
 // ไฟล์โลโก้ที่มีอยู่ในโปรเจกต์ ถ้าโหลดไม่ได้จะแสดงตัวย่อบริษัทแทน
@@ -46,6 +47,24 @@ function CompanyMark({ name }: { name: string }) {
     <span className="co-mark">
       <img src={logo} alt="" loading="lazy" onError={() => setFailed(true)} />
     </span>
+  )
+}
+
+const benchmarkNote = 'เกณฑ์ตัวอย่างที่ทีมผู้จัดทำกำหนดเพื่อสาธิต ไม่ใช่ข้อกำหนดของบริษัท และไม่ได้มาจากประกาศรับสมัครจริง'
+
+// ทักษะที่เกี่ยวข้องกับตำแหน่ง อ้างอิงเกณฑ์ตัวอย่างของสายงานที่จับคู่ไว้
+function PositionSkills({ position }: { position: string }) {
+  const role = positionRole[position]
+  const benchmark = role ? roleBenchmarks[role] : undefined
+  if (!benchmark) return <p className="detail-muted">ข้อมูลไม่เพียงพอ: ยังไม่มีเกณฑ์ตัวอย่างสำหรับตำแหน่งนี้</p>
+  return (
+    <ul className="co-skill-chips" aria-label={`ทักษะที่เกี่ยวข้องกับ ${position}`}>
+      {skillDefinitions
+        .filter((skill) => benchmark[skill.id] !== undefined)
+        .map((skill) => (
+          <li key={skill.id}>{skill.label}<strong>ระดับ {benchmark[skill.id]}</strong></li>
+        ))}
+    </ul>
   )
 }
 
@@ -103,6 +122,12 @@ export default function Companies() {
   )
   const maxCount = Math.max(...companies.map((company) => company.count), 1)
   const provinceCount = new Set(selectedStudents.map((student) => student.placement?.province).filter(Boolean)).size
+  const positionTotals = new Map<string, number>()
+  for (const student of selectedStudents) {
+    const position = student.placement?.position
+    if (position) positionTotals.set(position, (positionTotals.get(position) ?? 0) + 1)
+  }
+  const positionCounts = [...positionTotals.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'th'))
   const selectedCompany = companies.find((company) => company.name === selectedName) ?? null
   const scope = [year === 'all' ? 'ทุกปี' : `ปี ${year}`, province === 'all' ? 'ทุกจังหวัด' : province].join(' · ')
 
@@ -117,7 +142,7 @@ export default function Companies() {
       <PageHeader
         id="companies-title"
         title="สถานประกอบการ"
-        description="บริษัทที่มีผู้ได้ที่ฝึกงานในชุดข้อมูล จำนวนผู้ได้รับการตอบรับ จังหวัด และตำแหน่งที่พบ"
+        description="บริษัทที่มีผู้ได้ที่ฝึกงานในชุดข้อมูล จำนวนผู้ได้รับการตอบรับ จังหวัด ตำแหน่งที่พบ และทักษะที่เกี่ยวข้องกับตำแหน่ง"
       />
 
       <div className="panel filter-panel">
@@ -226,6 +251,30 @@ export default function Companies() {
         </div>
       )}
 
+      {positionCounts.length > 0 && (
+        <section className="panel" aria-labelledby="co-position-skills-title">
+          <header className="panel-header">
+            <div>
+              <h2 id="co-position-skills-title">ทักษะที่เกี่ยวข้องกับตำแหน่ง</h2>
+              <p className="panel-meta">ตำแหน่งที่พบตามตัวกรอง ({scope}) · ระดับ 0–5 ตามเกณฑ์ตัวอย่างของทีม</p>
+            </div>
+            <span className="count-badge">{positionCounts.length} ตำแหน่ง</span>
+          </header>
+          <p className="callout"><InfoIcon /><span>{benchmarkNote} · ใช้ชุดเดียวกับเกณฑ์ Skill Gap ในหน้าเตรียมความพร้อม</span></p>
+          <ul className="co-position-skills">
+            {positionCounts.map(([position, count]) => (
+              <li key={position}>
+                <div className="co-position-row">
+                  <strong>{position}</strong>
+                  <span>{formatNumber(count)} คน</span>
+                </div>
+                <PositionSkills position={position} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       <p className="page-note">
         จำนวนคำนวณตามตัวกรองที่เลือก · การจับคู่นิสิตกับบริษัทและตำแหน่งเป็นข้อมูลจำลอง
         ไม่ใช่สถิติการรับจริงหรือประกาศเปิดรับสมัครในปัจจุบัน
@@ -252,9 +301,13 @@ export default function Companies() {
               <h3 id="company-positions-title">ตำแหน่งที่พบ ({selectedCompany.positions.size})</h3>
               <ul className="co-positions">
                 {sortedPositions(selectedCompany).map(([position, count]) => (
-                  <li key={position}>
-                    <span>{position}</span>
-                    <strong>{formatNumber(count)} คน</strong>
+                  <li key={position} className="co-position-item">
+                    <div className="co-position-row">
+                      <span>{position}</span>
+                      <strong>{formatNumber(count)} คน</strong>
+                    </div>
+                    <p className="co-position-role">ทักษะที่เกี่ยวข้อง (เกณฑ์ตัวอย่างของทีม · สายงาน {positionRole[position] ?? 'ไม่มีข้อมูล'})</p>
+                    <PositionSkills position={position} />
                   </li>
                 ))}
               </ul>
@@ -262,7 +315,7 @@ export default function Companies() {
 
             <p className="callout">
               <InfoIcon />
-              <span>ตำแหน่งเหล่านี้มาจากชุดข้อมูลจำลอง ไม่ใช่ประกาศเปิดรับสมัครของบริษัทในปัจจุบัน</span>
+              <span>ตำแหน่งเหล่านี้มาจากชุดข้อมูลจำลอง ไม่ใช่ประกาศเปิดรับสมัครของบริษัทในปัจจุบัน · ระดับทักษะเป็น{benchmarkNote}</span>
             </p>
           </div>
         )}

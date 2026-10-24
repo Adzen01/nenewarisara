@@ -1,0 +1,6957 @@
+{
+  "metadata": {
+    "schemaVersion": 1,
+    "joinKey": "studentId",
+    "sourceFile": "src/data/internships.json",
+    "generator": "scripts/generate-profiles.ts",
+    "seed": 20251024,
+    "dataType": "ข้อมูลจำลอง",
+    "simulatedFields": [
+      "gpa",
+      "skills",
+      "portfolio.projectCount",
+      "portfolio.projectTypes",
+      "portfolio.technologies",
+      "portfolio.hasEvidence"
+    ],
+    "note": "ข้อมูลจำลองทั้งหมด สุ่มโดยไม่อ้างอิงสถานะการตอบรับ ใช้สาธิตการวิเคราะห์เท่านั้น ไม่ใช้ยืนยันปัจจัยความสำเร็จหรือตลาดงานจริง",
+    "recordCount": 240
+  },
+  "profiles": [
+    {
+      "studentId": "SIM-2566-001",
+      "gpa": 2.99,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 2,
+        "security": 2,
+        "testing": 3,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "TypeScript",
+          "JavaScript"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-002",
+      "gpa": 3.12,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": null,
+        "cloud": 1,
+        "network": 2,
+        "security": 2,
+        "testing": 2,
+        "mobile": 3,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Node.js",
+          "Git",
+          "C/C++",
+          "React"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-003",
+      "gpa": 2.78,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": null,
+        "ml": 1,
+        "cloud": null,
+        "network": 2,
+        "security": 2,
+        "testing": 3,
+        "mobile": 2,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Linux",
+          "Burp Suite",
+          "Wireshark",
+          "Nmap"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-004",
+      "gpa": 2.77,
+      "skills": {
+        "programming": 2,
+        "frontend": null,
+        "backend": 4,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 3,
+        "cloud": 2,
+        "network": 3,
+        "security": 1,
+        "testing": 3,
+        "mobile": 0,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Node.js",
+          "PostgreSQL",
+          "Git"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-005",
+      "gpa": 3.15,
+      "skills": {
+        "programming": 4,
+        "frontend": 3,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 0,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 3,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Python",
+          "Postman",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-006",
+      "gpa": 3,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 3,
+        "database": 0,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 2,
+        "network": 1,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Java",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-007",
+      "gpa": 3.47,
+      "skills": {
+        "programming": 0,
+        "frontend": 0,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 3,
+        "ml": 3,
+        "cloud": null,
+        "network": 1,
+        "security": 0,
+        "testing": 2,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-008",
+      "gpa": 3.2,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานฟรีแลนซ์",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Python",
+          "Vue"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-009",
+      "gpa": 2.1,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 1,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 0,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 1,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "C/C++",
+          "Python"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-010",
+      "gpa": 3.78,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 3,
+        "network": 2,
+        "security": 1,
+        "testing": 2,
+        "mobile": 0,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Nmap",
+          "Java",
+          "Burp Suite",
+          "Linux"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-011",
+      "gpa": 3.41,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 1,
+        "database": 5,
+        "dataAnalysis": 3,
+        "ml": 3,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 2,
+        "mobile": 3,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Git",
+          "PostgreSQL",
+          "Go"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-012",
+      "gpa": 3.07,
+      "skills": {
+        "programming": 2,
+        "frontend": 4,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 2,
+        "network": 1,
+        "security": 0,
+        "testing": 2,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-013",
+      "gpa": 3.36,
+      "skills": {
+        "programming": 3,
+        "frontend": 4,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 3,
+        "ml": null,
+        "cloud": 1,
+        "network": 2,
+        "security": 2,
+        "testing": 3,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Figma",
+          "C/C++",
+          "Vue"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-014",
+      "gpa": 3.18,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 0,
+        "security": 3,
+        "testing": 2,
+        "mobile": 0,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-015",
+      "gpa": 2.68,
+      "skills": {
+        "programming": 1,
+        "frontend": 3,
+        "backend": 1,
+        "database": 0,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 1,
+        "security": 1,
+        "testing": 4,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "แข่งขัน / Hackathon",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Java"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2566-016",
+      "gpa": 2.96,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 4,
+        "network": 1,
+        "security": 2,
+        "testing": 1,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "โครงงานส่วนตัว",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "C/C++",
+          "React"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-017",
+      "gpa": 3.59,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 1,
+        "database": 0,
+        "dataAnalysis": 2,
+        "ml": 3,
+        "cloud": 3,
+        "network": 3,
+        "security": 4,
+        "testing": 1,
+        "mobile": 0,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Burp Suite",
+          "Nmap",
+          "C/C++",
+          "Linux"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-018",
+      "gpa": 3.1,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 0,
+        "network": 2,
+        "security": 2,
+        "testing": 1,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Go",
+          "C/C++",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-019",
+      "gpa": 3.35,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 2,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 2,
+        "network": null,
+        "security": 2,
+        "testing": 2,
+        "mobile": 0,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานชมรม / จิตอาสา",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Git",
+          "C/C++",
+          "Postman"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-020",
+      "gpa": 3.23,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 1,
+        "network": 0,
+        "security": 1,
+        "testing": 5,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "TypeScript",
+          "Figma"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-021",
+      "gpa": 2.59,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 2,
+        "database": 4,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 4,
+        "network": 1,
+        "security": 0,
+        "testing": 3,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-022",
+      "gpa": 3.29,
+      "skills": {
+        "programming": 5,
+        "frontend": 3,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 3,
+        "cloud": 2,
+        "network": 2,
+        "security": 0,
+        "testing": 3,
+        "mobile": 2,
+        "git": 5
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Git",
+          "Vue",
+          "React",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-023",
+      "gpa": 2.61,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 2,
+        "database": null,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 2,
+        "security": 1,
+        "testing": 2,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-024",
+      "gpa": 3.09,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 0,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 3,
+        "cloud": 3,
+        "network": 3,
+        "security": 2,
+        "testing": 3,
+        "mobile": 1,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "C/C++",
+          "Wireshark"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-025",
+      "gpa": 3.07,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 5,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 2,
+        "network": 4,
+        "security": 1,
+        "testing": 2,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 6,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานฟรีแลนซ์",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "PostgreSQL",
+          "Express"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-026",
+      "gpa": 2.87,
+      "skills": {
+        "programming": null,
+        "frontend": 1,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 2,
+        "network": 1,
+        "security": 2,
+        "testing": 3,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2566-027",
+      "gpa": 3.66,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 1,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 1,
+        "network": 1,
+        "security": 1,
+        "testing": 5,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-028",
+      "gpa": 2.74,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 0,
+        "database": 3,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 3,
+        "network": 2,
+        "security": 1,
+        "testing": 0,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "JavaScript",
+          "BigQuery",
+          "Spark"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-029",
+      "gpa": 2.15,
+      "skills": {
+        "programming": 1,
+        "frontend": 4,
+        "backend": 4,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": null,
+        "cloud": 1,
+        "network": 2,
+        "security": 3,
+        "testing": 2,
+        "mobile": 0,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-030",
+      "gpa": 2.66,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 4,
+        "cloud": 0,
+        "network": 2,
+        "security": 2,
+        "testing": 0,
+        "mobile": 2,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 7,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-031",
+      "gpa": 2.53,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 5,
+        "network": 2,
+        "security": 5,
+        "testing": 0,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานฟรีแลนซ์",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Git",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-032",
+      "gpa": 3.66,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 3,
+        "cloud": 2,
+        "network": null,
+        "security": 3,
+        "testing": 3,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Node.js"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-033",
+      "gpa": 3.09,
+      "skills": {
+        "programming": 3,
+        "frontend": 4,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 1,
+        "network": 1,
+        "security": 1,
+        "testing": 2,
+        "mobile": 1,
+        "git": 5
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "JavaScript"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-034",
+      "gpa": 3.17,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 4,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 4,
+        "security": 2,
+        "testing": 3,
+        "mobile": 0,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Go",
+          "Git",
+          "C/C++",
+          "Express"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-035",
+      "gpa": 3.11,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 0,
+        "ml": 2,
+        "cloud": 2,
+        "network": 1,
+        "security": 1,
+        "testing": 1,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-036",
+      "gpa": 3.11,
+      "skills": {
+        "programming": 5,
+        "frontend": 4,
+        "backend": 0,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": null,
+        "network": 2,
+        "security": 1,
+        "testing": 4,
+        "mobile": 0,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "แข่งขัน / Hackathon",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "TypeScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-037",
+      "gpa": 3.62,
+      "skills": {
+        "programming": 2,
+        "frontend": 4,
+        "backend": 2,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 3,
+        "cloud": 1,
+        "network": 3,
+        "security": 2,
+        "testing": 2,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "React",
+          "Node.js"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-038",
+      "gpa": 3.21,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 3,
+        "database": 0,
+        "dataAnalysis": 3,
+        "ml": 0,
+        "cloud": 2,
+        "network": 3,
+        "security": 2,
+        "testing": 0,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานชมรม / จิตอาสา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "C/C++",
+          "Windows Server"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-039",
+      "gpa": 2.17,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 0,
+        "ml": 2,
+        "cloud": 2,
+        "network": 3,
+        "security": 2,
+        "testing": 5,
+        "mobile": 1,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Python",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-040",
+      "gpa": null,
+      "skills": {
+        "programming": 4,
+        "frontend": 3,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": 4
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2566-041",
+      "gpa": null,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 4,
+        "ml": 2,
+        "cloud": 0,
+        "network": null,
+        "security": 3,
+        "testing": 1,
+        "mobile": 2,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Go"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-042",
+      "gpa": 2.31,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 5,
+        "ml": 1,
+        "cloud": 1,
+        "network": null,
+        "security": 0,
+        "testing": 0,
+        "mobile": null,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Airflow",
+          "Java",
+          "Spark"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2566-043",
+      "gpa": 3.1,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 1,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 0,
+        "network": 2,
+        "security": 1,
+        "testing": 3,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Git",
+          "Figma",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-044",
+      "gpa": 2.6,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 1,
+        "database": 4,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 2,
+        "network": 1,
+        "security": 1,
+        "testing": 1,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Git",
+          "JavaScript",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-045",
+      "gpa": 3.22,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 1,
+        "network": 2,
+        "security": 0,
+        "testing": 2,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Bash"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-046",
+      "gpa": 2.75,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 0,
+        "dataAnalysis": 1,
+        "ml": 0,
+        "cloud": 2,
+        "network": 1,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 7,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "JavaScript"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-047",
+      "gpa": 2.44,
+      "skills": {
+        "programming": 5,
+        "frontend": 2,
+        "backend": null,
+        "database": 5,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 2,
+        "network": 0,
+        "security": 1,
+        "testing": 2,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Selenium",
+          "Python",
+          "Cypress",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-048",
+      "gpa": 3.21,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 0,
+        "ml": 2,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": null,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-049",
+      "gpa": 3.73,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 2,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานชมรม / จิตอาสา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-050",
+      "gpa": 1.97,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 0,
+        "network": 2,
+        "security": 0,
+        "testing": 4,
+        "mobile": 0,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Java",
+          "Figma",
+          "Python",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-051",
+      "gpa": 3.3,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 3,
+        "network": 1,
+        "security": 1,
+        "testing": 3,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Excel",
+          "Java",
+          "JavaScript",
+          "Git"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-052",
+      "gpa": 3.16,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 0,
+        "cloud": 2,
+        "network": 3,
+        "security": 5,
+        "testing": 2,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Python",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-053",
+      "gpa": 3.04,
+      "skills": {
+        "programming": 1,
+        "frontend": 4,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 3,
+        "cloud": 0,
+        "network": 2,
+        "security": 3,
+        "testing": 1,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "MongoDB",
+          "Python",
+          "React",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-054",
+      "gpa": 3.02,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 0,
+        "database": 2,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 1,
+        "network": 0,
+        "security": 1,
+        "testing": 2,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-055",
+      "gpa": 3.04,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 3,
+        "database": null,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 1,
+        "network": 1,
+        "security": 5,
+        "testing": 2,
+        "mobile": 3,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "C/C++"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-056",
+      "gpa": 2.39,
+      "skills": {
+        "programming": 5,
+        "frontend": 2,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 3,
+        "mobile": 3,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Java",
+          "Jupyter",
+          "pandas",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-057",
+      "gpa": 2.77,
+      "skills": {
+        "programming": 1,
+        "frontend": 1,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 0,
+        "security": 3,
+        "testing": 4,
+        "mobile": 3,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-058",
+      "gpa": 2.91,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 2,
+        "security": 1,
+        "testing": 1,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Java",
+          "Power BI",
+          "SQL",
+          "Excel"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-059",
+      "gpa": 2.61,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": null,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 3,
+        "network": 2,
+        "security": 4,
+        "testing": null,
+        "mobile": 0,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Java"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-060",
+      "gpa": 2.32,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 0,
+        "cloud": 2,
+        "network": 0,
+        "security": 0,
+        "testing": 1,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Git",
+          "MongoDB",
+          "Next.js",
+          "PostgreSQL"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-061",
+      "gpa": 2.51,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 1,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 1,
+        "network": 2,
+        "security": 2,
+        "testing": 1,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "GitHub Actions",
+          "Docker",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-062",
+      "gpa": 3.67,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 4,
+        "database": 4,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 1,
+        "network": 4,
+        "security": 1,
+        "testing": 2,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "PostgreSQL",
+          "Node.js",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-063",
+      "gpa": 3.41,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 2,
+        "mobile": null,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Jupyter",
+          "Python",
+          "scikit-learn",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-064",
+      "gpa": 2.92,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": null,
+        "network": 3,
+        "security": 1,
+        "testing": 5,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Git",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-065",
+      "gpa": 2.78,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 1,
+        "database": 4,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 2,
+        "network": 3,
+        "security": 2,
+        "testing": 1,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "โครงงานรายวิชา",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Excel",
+          "Java",
+          "C/C++",
+          "Python"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2566-066",
+      "gpa": 2.52,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 0,
+        "ml": 3,
+        "cloud": 2,
+        "network": 5,
+        "security": 3,
+        "testing": 1,
+        "mobile": 0,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Git",
+          "Bash",
+          "Windows Server"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-067",
+      "gpa": 2.83,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": null,
+        "network": 0,
+        "security": 2,
+        "testing": 3,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "MongoDB",
+          "Java",
+          "C/C++"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-068",
+      "gpa": 2.36,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 3,
+        "network": null,
+        "security": 0,
+        "testing": 1,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Git",
+          "GitHub Actions"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2566-069",
+      "gpa": 3.48,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": null,
+        "ml": 3,
+        "cloud": 2,
+        "network": 1,
+        "security": 3,
+        "testing": 1,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-070",
+      "gpa": 2.84,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 2,
+        "database": 4,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 2,
+        "security": 0,
+        "testing": 1,
+        "mobile": 1,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-071",
+      "gpa": 2.89,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 2,
+        "network": 0,
+        "security": 2,
+        "testing": 4,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Tailwind CSS",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-072",
+      "gpa": 3.6,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": null,
+        "cloud": 1,
+        "network": 3,
+        "security": 2,
+        "testing": 1,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "C/C++",
+          "Excel",
+          "Python",
+          "Power BI"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-073",
+      "gpa": 3.14,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 0,
+        "testing": 2,
+        "mobile": 3,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Java",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-074",
+      "gpa": 3.26,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 2,
+        "database": null,
+        "dataAnalysis": 0,
+        "ml": 2,
+        "cloud": 2,
+        "network": 1,
+        "security": 3,
+        "testing": null,
+        "mobile": 0,
+        "git": 3
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2566-075",
+      "gpa": 2.84,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานชมรม / จิตอาสา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Python",
+          "Terraform",
+          "Kubernetes",
+          "Docker"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-076",
+      "gpa": 3.31,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 3,
+        "database": null,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 3,
+        "network": 1,
+        "security": 2,
+        "testing": 4,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "C/C++"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2566-077",
+      "gpa": 2.01,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 4,
+        "cloud": 2,
+        "network": 2,
+        "security": 1,
+        "testing": 2,
+        "mobile": 3,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "JavaScript",
+          "C/C++",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-078",
+      "gpa": 3.11,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 4,
+        "network": 1,
+        "security": 1,
+        "testing": 3,
+        "mobile": 1,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "JavaScript",
+          "React",
+          "C/C++",
+          "TypeScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-079",
+      "gpa": 2.68,
+      "skills": {
+        "programming": null,
+        "frontend": 3,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 4,
+        "cloud": 3,
+        "network": 1,
+        "security": 2,
+        "testing": 1,
+        "mobile": 0,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Java",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2566-080",
+      "gpa": 2.23,
+      "skills": null,
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Python",
+          "React Native",
+          "Kotlin"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2567-001",
+      "gpa": 2.99,
+      "skills": {
+        "programming": null,
+        "frontend": 1,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 1,
+        "network": 1,
+        "security": 3,
+        "testing": 5,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Git",
+          "PostgreSQL"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-002",
+      "gpa": 2.49,
+      "skills": {
+        "programming": null,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 4,
+        "ml": 0,
+        "cloud": 2,
+        "network": 0,
+        "security": null,
+        "testing": 1,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "SQL"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-003",
+      "gpa": 2.81,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 1,
+        "database": 0,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 1,
+        "testing": 3,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Tailwind CSS",
+          "React"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-004",
+      "gpa": 3.04,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 2,
+        "network": 2,
+        "security": 1,
+        "testing": 0,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 6,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "MongoDB",
+          "Java",
+          "Git",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-005",
+      "gpa": 3.08,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 2,
+        "network": 4,
+        "security": 2,
+        "testing": 0,
+        "mobile": 1,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Java",
+          "Bash"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-006",
+      "gpa": 2.82,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 4,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 2,
+        "network": 3,
+        "security": 1,
+        "testing": 2,
+        "mobile": 4,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Spring Boot",
+          "Python",
+          "Node.js",
+          "Express"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-007",
+      "gpa": 2.89,
+      "skills": {
+        "programming": 1,
+        "frontend": 1,
+        "backend": 1,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 2,
+        "network": 0,
+        "security": 0,
+        "testing": 2,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "โครงงานรายวิชา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Git",
+          "Jest",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-008",
+      "gpa": 3,
+      "skills": {
+        "programming": 4,
+        "frontend": 3,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 1,
+        "network": 1,
+        "security": 1,
+        "testing": 2,
+        "mobile": 3,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-009",
+      "gpa": 2.63,
+      "skills": {
+        "programming": 0,
+        "frontend": 3,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 4,
+        "network": 1,
+        "security": 3,
+        "testing": 1,
+        "mobile": 2,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-010",
+      "gpa": 3.35,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 5,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 0,
+        "network": 0,
+        "security": 1,
+        "testing": 2,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Figma",
+          "JavaScript",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-011",
+      "gpa": 2.69,
+      "skills": {
+        "programming": null,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 1,
+        "network": 2,
+        "security": 1,
+        "testing": 5,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "pandas",
+          "Git",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-012",
+      "gpa": 2.54,
+      "skills": {
+        "programming": 5,
+        "frontend": 1,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 3,
+        "network": 4,
+        "security": 2,
+        "testing": 2,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-013",
+      "gpa": null,
+      "skills": {
+        "programming": 2,
+        "frontend": 4,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 0,
+        "network": 1,
+        "security": 0,
+        "testing": 1,
+        "mobile": 0,
+        "git": 3
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2567-014",
+      "gpa": 3.05,
+      "skills": {
+        "programming": 3,
+        "frontend": 5,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 2,
+        "network": 0,
+        "security": 1,
+        "testing": 2,
+        "mobile": 2,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 7,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-015",
+      "gpa": 2.76,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 0,
+        "network": 2,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Node.js"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-016",
+      "gpa": 2.61,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 1,
+        "database": null,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 3,
+        "network": 0,
+        "security": 0,
+        "testing": 2,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-017",
+      "gpa": 2.99,
+      "skills": {
+        "programming": 4,
+        "frontend": null,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 3,
+        "network": 3,
+        "security": 1,
+        "testing": 2,
+        "mobile": null,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Vue",
+          "Figma",
+          "TypeScript",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-018",
+      "gpa": 3.09,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 0,
+        "network": 1,
+        "security": 1,
+        "testing": null,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Java",
+          "Python",
+          "Excel"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-019",
+      "gpa": 2.72,
+      "skills": {
+        "programming": 4,
+        "frontend": 3,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 2,
+        "network": 1,
+        "security": 4,
+        "testing": 1,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Java",
+          "Windows Server"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-020",
+      "gpa": 2.7,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 5,
+        "database": 0,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 3,
+        "security": 2,
+        "testing": 0,
+        "mobile": null,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Python",
+          "Node.js",
+          "JavaScript",
+          "MongoDB"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-021",
+      "gpa": 3.93,
+      "skills": {
+        "programming": 5,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 4,
+        "security": 1,
+        "testing": 2,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-022",
+      "gpa": 2.98,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 4,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 2,
+        "network": 1,
+        "security": 2,
+        "testing": 3,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานรายวิชา",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Node.js",
+          "Express"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-023",
+      "gpa": 3.08,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 3,
+        "database": 4,
+        "dataAnalysis": 3,
+        "ml": 5,
+        "cloud": 2,
+        "network": 0,
+        "security": 2,
+        "testing": 0,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "โครงงานรายวิชา",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "scikit-learn",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-024",
+      "gpa": 2.65,
+      "skills": {
+        "programming": 2,
+        "frontend": 4,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 1,
+        "network": 1,
+        "security": 3,
+        "testing": 1,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Figma",
+          "Python",
+          "JavaScript",
+          "React"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-025",
+      "gpa": 2.91,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 3,
+        "database": 4,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 3,
+        "network": 2,
+        "security": 2,
+        "testing": 1,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "pandas",
+          "Java",
+          "C/C++",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-026",
+      "gpa": 2.82,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 3,
+        "network": 3,
+        "security": 3,
+        "testing": 0,
+        "mobile": 0,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Bash",
+          "Python",
+          "Windows Server",
+          "C/C++"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-027",
+      "gpa": 3.8,
+      "skills": {
+        "programming": null,
+        "frontend": 3,
+        "backend": 1,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 3,
+        "security": 1,
+        "testing": 2,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Next.js"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-028",
+      "gpa": 2.9,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 0,
+        "cloud": null,
+        "network": 4,
+        "security": 3,
+        "testing": 2,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "GitHub Actions",
+          "C/C++",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-029",
+      "gpa": 3.23,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 1,
+        "network": 2,
+        "security": 3,
+        "testing": 3,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-030",
+      "gpa": 2.85,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 0,
+        "database": 5,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 2,
+        "network": 0,
+        "security": 2,
+        "testing": 0,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Java",
+          "Git",
+          "scikit-learn",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-031",
+      "gpa": 2.41,
+      "skills": {
+        "programming": 3,
+        "frontend": 4,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 2,
+        "network": 3,
+        "security": 2,
+        "testing": 4,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Java",
+          "React",
+          "Vue",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-032",
+      "gpa": 2.84,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 4,
+        "ml": 2,
+        "cloud": 2,
+        "network": 0,
+        "security": 3,
+        "testing": 1,
+        "mobile": 2,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-033",
+      "gpa": 2.81,
+      "skills": {
+        "programming": 4,
+        "frontend": 0,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 4,
+        "network": 3,
+        "security": 4,
+        "testing": null,
+        "mobile": 2,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Windows Server",
+          "Git",
+          "Python",
+          "JavaScript"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-034",
+      "gpa": 2.81,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 3,
+        "database": 5,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 2,
+        "security": 0,
+        "testing": 1,
+        "mobile": 2,
+        "git": 4
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2567-035",
+      "gpa": 3,
+      "skills": {
+        "programming": 1,
+        "frontend": 0,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 4,
+        "cloud": 4,
+        "network": 3,
+        "security": 1,
+        "testing": 4,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-036",
+      "gpa": 3.21,
+      "skills": {
+        "programming": 1,
+        "frontend": 1,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 1,
+        "network": 2,
+        "security": 1,
+        "testing": 3,
+        "mobile": 2,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-037",
+      "gpa": 2.91,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 4,
+        "cloud": 2,
+        "network": 1,
+        "security": 2,
+        "testing": 1,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "PyTorch"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-038",
+      "gpa": 3.34,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 2,
+        "network": 1,
+        "security": 2,
+        "testing": 2,
+        "mobile": 0,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Vue",
+          "C/C++",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-039",
+      "gpa": 3.06,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 1,
+        "database": 1,
+        "dataAnalysis": 4,
+        "ml": 0,
+        "cloud": 1,
+        "network": 1,
+        "security": 1,
+        "testing": 3,
+        "mobile": 2,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานฟรีแลนซ์",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "JavaScript",
+          "SQL"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-040",
+      "gpa": 3.57,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 1,
+        "database": 1,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 0,
+        "network": 0,
+        "security": 0,
+        "testing": 4,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-041",
+      "gpa": 3.5,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 5,
+        "database": 4,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 1,
+        "security": null,
+        "testing": 1,
+        "mobile": 1,
+        "git": 5
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-042",
+      "gpa": 2.51,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 0,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": null,
+        "cloud": 3,
+        "network": 1,
+        "security": 3,
+        "testing": 2,
+        "mobile": 0,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "AWS",
+          "Kubernetes"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-043",
+      "gpa": 2.99,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 3,
+        "cloud": 2,
+        "network": 2,
+        "security": 0,
+        "testing": 3,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Python",
+          "Express",
+          "Node.js"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-044",
+      "gpa": 3.17,
+      "skills": {
+        "programming": 1,
+        "frontend": 3,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 4,
+        "ml": 5,
+        "cloud": 2,
+        "network": 2,
+        "security": 0,
+        "testing": 0,
+        "mobile": null,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Python",
+          "scikit-learn"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-045",
+      "gpa": 2.61,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 1,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 1,
+        "security": null,
+        "testing": 3,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Vue",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-046",
+      "gpa": 2.88,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 4,
+        "ml": 3,
+        "cloud": 1,
+        "network": 3,
+        "security": 1,
+        "testing": 2,
+        "mobile": 0,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-047",
+      "gpa": 2.95,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 0,
+        "ml": 2,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "C/C++",
+          "Firebase",
+          "Java",
+          "Kotlin"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-048",
+      "gpa": 3.1,
+      "skills": {
+        "programming": 3,
+        "frontend": 4,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 7,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Java",
+          "Next.js"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-049",
+      "gpa": 3.15,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 2,
+        "network": 2,
+        "security": 3,
+        "testing": 3,
+        "mobile": 1,
+        "git": 5
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "AWS"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2567-050",
+      "gpa": 3.1,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 2,
+        "network": 0,
+        "security": 2,
+        "testing": null,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "PostgreSQL",
+          "Python",
+          "Node.js",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-051",
+      "gpa": 3.75,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 1,
+        "database": 4,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 1,
+        "testing": 1,
+        "mobile": 0,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 6,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "scikit-learn"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-052",
+      "gpa": 3.98,
+      "skills": {
+        "programming": 3,
+        "frontend": 4,
+        "backend": 2,
+        "database": 0,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 3,
+        "network": 3,
+        "security": 2,
+        "testing": 2,
+        "mobile": 3,
+        "git": 4
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2567-053",
+      "gpa": 3.27,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 4,
+        "ml": 2,
+        "cloud": 3,
+        "network": 0,
+        "security": 1,
+        "testing": 1,
+        "mobile": 1,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-054",
+      "gpa": 2.84,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 0,
+        "ml": 2,
+        "cloud": 1,
+        "network": 0,
+        "security": 1,
+        "testing": 2,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Swift",
+          "React Native",
+          "Git",
+          "Flutter"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-055",
+      "gpa": 3.12,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 4,
+        "database": 3,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 1,
+        "network": 2,
+        "security": 0,
+        "testing": 2,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Java",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-056",
+      "gpa": 3.5,
+      "skills": {
+        "programming": null,
+        "frontend": 2,
+        "backend": 1,
+        "database": 0,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 3,
+        "network": 2,
+        "security": 2,
+        "testing": 1,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Java",
+          "JavaScript",
+          "AWS"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2567-057",
+      "gpa": 2.86,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 1,
+        "security": 1,
+        "testing": 4,
+        "mobile": 1,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Express",
+          "Go",
+          "C/C++"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-058",
+      "gpa": 2.84,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 0,
+        "network": 1,
+        "security": 2,
+        "testing": 5,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2567-059",
+      "gpa": 2.75,
+      "skills": {
+        "programming": 5,
+        "frontend": 3,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 2,
+        "network": 0,
+        "security": 3,
+        "testing": 2,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Figma",
+          "TypeScript",
+          "C/C++"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-060",
+      "gpa": null,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 0,
+        "network": 0,
+        "security": 2,
+        "testing": 0,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Java",
+          "JavaScript",
+          "Python",
+          "Excel"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-061",
+      "gpa": 2.78,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 0,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Swift",
+          "Git",
+          "C/C++",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-062",
+      "gpa": 3.28,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 4,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 0,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานฟรีแลนซ์",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "MongoDB"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-063",
+      "gpa": 3.41,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": null,
+        "cloud": 4,
+        "network": 3,
+        "security": 4,
+        "testing": 2,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Git",
+          "Python",
+          "Terraform"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-064",
+      "gpa": 2.94,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 2,
+        "database": null,
+        "dataAnalysis": 3,
+        "ml": 3,
+        "cloud": null,
+        "network": null,
+        "security": 1,
+        "testing": 4,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Git",
+          "JavaScript",
+          "Node.js"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-065",
+      "gpa": 2.98,
+      "skills": {
+        "programming": 4,
+        "frontend": 5,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 4,
+        "testing": 3,
+        "mobile": 1,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Jest",
+          "C/C++"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-066",
+      "gpa": 3.16,
+      "skills": {
+        "programming": 4,
+        "frontend": 0,
+        "backend": 4,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 1,
+        "network": 0,
+        "security": 1,
+        "testing": 3,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 6,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Figma"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-067",
+      "gpa": 2.62,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 2,
+        "network": 1,
+        "security": 0,
+        "testing": 1,
+        "mobile": 1,
+        "git": 5
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2567-068",
+      "gpa": 3.08,
+      "skills": {
+        "programming": 5,
+        "frontend": 3,
+        "backend": 4,
+        "database": 1,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 1,
+        "network": 2,
+        "security": 1,
+        "testing": 3,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานชมรม / จิตอาสา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Java",
+          "Vue",
+          "Python",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-069",
+      "gpa": 2.52,
+      "skills": {
+        "programming": 3,
+        "frontend": 5,
+        "backend": 4,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 3,
+        "cloud": 0,
+        "network": 0,
+        "security": 1,
+        "testing": 2,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-070",
+      "gpa": 2.8,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 0,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 3,
+        "cloud": 2,
+        "network": 3,
+        "security": 2,
+        "testing": 1,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-071",
+      "gpa": 1.98,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 3,
+        "database": 4,
+        "dataAnalysis": 2,
+        "ml": 4,
+        "cloud": 1,
+        "network": 4,
+        "security": 3,
+        "testing": 3,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "PostgreSQL",
+          "Spring Boot",
+          "Go"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2567-072",
+      "gpa": 2.98,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 0,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 0,
+        "network": 3,
+        "security": 1,
+        "testing": 4,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-073",
+      "gpa": 2.45,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 3,
+        "cloud": 2,
+        "network": 1,
+        "security": 3,
+        "testing": 2,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-074",
+      "gpa": 2.96,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 0,
+        "database": 1,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 3,
+        "network": 1,
+        "security": 2,
+        "testing": 2,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "C/C++",
+          "pandas"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-075",
+      "gpa": 2.3,
+      "skills": {
+        "programming": 1,
+        "frontend": 1,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 3,
+        "security": 1,
+        "testing": 1,
+        "mobile": 1,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-076",
+      "gpa": 3.02,
+      "skills": {
+        "programming": 4,
+        "frontend": 3,
+        "backend": 4,
+        "database": 5,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 2,
+        "network": 1,
+        "security": 1,
+        "testing": 1,
+        "mobile": 1,
+        "git": 5
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Java",
+          "JavaScript",
+          "React",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-077",
+      "gpa": 2.32,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 5,
+        "security": 2,
+        "testing": 0,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Python",
+          "Linux",
+          "JavaScript",
+          "Nmap"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2567-078",
+      "gpa": 3.07,
+      "skills": {
+        "programming": 1,
+        "frontend": 1,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 3,
+        "network": 3,
+        "security": 2,
+        "testing": 2,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Spring Boot"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-079",
+      "gpa": 2.6,
+      "skills": {
+        "programming": 4,
+        "frontend": 4,
+        "backend": 1,
+        "database": 4,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 3,
+        "network": null,
+        "security": 1,
+        "testing": 4,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Postman",
+          "Git",
+          "Cypress"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2567-080",
+      "gpa": 3.12,
+      "skills": {
+        "programming": 1,
+        "frontend": 4,
+        "backend": 4,
+        "database": 0,
+        "dataAnalysis": 0,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 1,
+        "testing": 3,
+        "mobile": 4,
+        "git": 2
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2568-001",
+      "gpa": 3.02,
+      "skills": {
+        "programming": 0,
+        "frontend": 5,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 0,
+        "network": 2,
+        "security": 1,
+        "testing": 1,
+        "mobile": 0,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Node.js",
+          "Git"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-002",
+      "gpa": 2.73,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": null,
+        "ml": 1,
+        "cloud": 4,
+        "network": 1,
+        "security": 5,
+        "testing": 2,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Kubernetes",
+          "AWS",
+          "Docker",
+          "C/C++"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-003",
+      "gpa": 2.74,
+      "skills": {
+        "programming": 5,
+        "frontend": 1,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 3,
+        "network": 2,
+        "security": 1,
+        "testing": 1,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Git",
+          "Java",
+          "Go"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-004",
+      "gpa": 3.09,
+      "skills": {
+        "programming": null,
+        "frontend": 2,
+        "backend": 0,
+        "database": 3,
+        "dataAnalysis": 3,
+        "ml": 3,
+        "cloud": 3,
+        "network": 0,
+        "security": 2,
+        "testing": 3,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Git",
+          "Jupyter"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-005",
+      "gpa": 2.95,
+      "skills": {
+        "programming": 3,
+        "frontend": 4,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 0,
+        "cloud": 2,
+        "network": 1,
+        "security": 0,
+        "testing": 4,
+        "mobile": 3,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Tailwind CSS"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-006",
+      "gpa": 2.22,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 2,
+        "database": 5,
+        "dataAnalysis": 4,
+        "ml": 2,
+        "cloud": 3,
+        "network": 2,
+        "security": 1,
+        "testing": 0,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Excel",
+          "pandas",
+          "Git",
+          "Power BI"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2568-007",
+      "gpa": 2.91,
+      "skills": null,
+      "portfolio": {
+        "projectCount": 7,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "โครงงานส่วนตัว",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Flutter",
+          "React Native",
+          "Kotlin"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-008",
+      "gpa": 4,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 2,
+        "database": null,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 0,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "PostgreSQL",
+          "C/C++"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2568-009",
+      "gpa": 3.24,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": null,
+        "ml": 1,
+        "cloud": 5,
+        "network": 2,
+        "security": 1,
+        "testing": 1,
+        "mobile": 0,
+        "git": 5
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Git"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-010",
+      "gpa": 3.33,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": null,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 4,
+        "testing": 2,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 7,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Java",
+          "Spring Boot"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-011",
+      "gpa": null,
+      "skills": null,
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-012",
+      "gpa": 3.1,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 2,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Git"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-013",
+      "gpa": 2.95,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 5,
+        "ml": 3,
+        "cloud": null,
+        "network": 3,
+        "security": 0,
+        "testing": 1,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "โครงงานส่วนตัว",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Power BI",
+          "JavaScript",
+          "Excel",
+          "Java"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-014",
+      "gpa": 2.77,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 1,
+        "database": 0,
+        "dataAnalysis": 3,
+        "ml": 3,
+        "cloud": 2,
+        "network": 2,
+        "security": 1,
+        "testing": 3,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "JavaScript",
+          "React Native"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-015",
+      "gpa": 2.56,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 4,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 3,
+        "network": 1,
+        "security": 1,
+        "testing": 4,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Node.js"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-016",
+      "gpa": 3.11,
+      "skills": {
+        "programming": 4,
+        "frontend": 1,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": null,
+        "ml": 1,
+        "cloud": 1,
+        "network": 3,
+        "security": 3,
+        "testing": 1,
+        "mobile": 2,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Python",
+          "JavaScript",
+          "AWS",
+          "Java"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2568-017",
+      "gpa": 3.35,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 5,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 0,
+        "network": 1,
+        "security": 1,
+        "testing": null,
+        "mobile": 1,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-018",
+      "gpa": 3.97,
+      "skills": {
+        "programming": 0,
+        "frontend": 2,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 1,
+        "network": 1,
+        "security": 1,
+        "testing": 0,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-019",
+      "gpa": 3.07,
+      "skills": {
+        "programming": null,
+        "frontend": 3,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 1,
+        "security": 1,
+        "testing": 3,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Vue",
+          "TypeScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-020",
+      "gpa": 2.53,
+      "skills": {
+        "programming": 0,
+        "frontend": 2,
+        "backend": 1,
+        "database": 4,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 3,
+        "security": null,
+        "testing": 1,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Power BI",
+          "pandas",
+          "JavaScript",
+          "SQL"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-021",
+      "gpa": 2.6,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 4,
+        "database": 1,
+        "dataAnalysis": 4,
+        "ml": 2,
+        "cloud": 1,
+        "network": 0,
+        "security": 2,
+        "testing": 3,
+        "mobile": 3,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Git",
+          "React Native",
+          "Python",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-022",
+      "gpa": 3.02,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 4,
+        "database": 3,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 3,
+        "network": 1,
+        "security": 2,
+        "testing": 1,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "React",
+          "Java",
+          "PostgreSQL"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-023",
+      "gpa": 2.95,
+      "skills": null,
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2568-024",
+      "gpa": 2.62,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 2,
+        "database": 4,
+        "dataAnalysis": 2,
+        "ml": null,
+        "cloud": 1,
+        "network": 0,
+        "security": 0,
+        "testing": 2,
+        "mobile": 2,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 6,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "PostgreSQL",
+          "Node.js",
+          "Spring Boot",
+          "Go"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2568-025",
+      "gpa": 2.91,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 2,
+        "database": 3,
+        "dataAnalysis": 0,
+        "ml": 2,
+        "cloud": 2,
+        "network": 0,
+        "security": 1,
+        "testing": 4,
+        "mobile": 1,
+        "git": 0
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Cypress"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-026",
+      "gpa": 2.46,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 0,
+        "network": null,
+        "security": 1,
+        "testing": 3,
+        "mobile": 2,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Tailwind CSS",
+          "TypeScript",
+          "C/C++",
+          "JavaScript"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-027",
+      "gpa": 3.86,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 0,
+        "network": 2,
+        "security": 1,
+        "testing": 2,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-028",
+      "gpa": 2.51,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": null,
+        "database": 1,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 0,
+        "network": 1,
+        "security": 1,
+        "testing": 3,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-029",
+      "gpa": 2.63,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 3,
+        "database": 5,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 3,
+        "security": 2,
+        "testing": 0,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Node.js",
+          "Python",
+          "React",
+          "Next.js"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-030",
+      "gpa": 2.81,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 5,
+        "network": 4,
+        "security": 1,
+        "testing": 2,
+        "mobile": 1,
+        "git": 5
+      },
+      "portfolio": {
+        "projectCount": 6,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Docker",
+          "GitHub Actions"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-031",
+      "gpa": 2.53,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 3,
+        "ml": 3,
+        "cloud": 2,
+        "network": 1,
+        "security": 0,
+        "testing": 4,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Spring Boot",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-032",
+      "gpa": 2.8,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 2,
+        "network": 2,
+        "security": 3,
+        "testing": 2,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Cypress",
+          "Git",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-033",
+      "gpa": 3.12,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 1,
+        "network": 2,
+        "security": 1,
+        "testing": 4,
+        "mobile": 1,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 7,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "งานฟรีแลนซ์",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Figma",
+          "Python",
+          "React",
+          "Tailwind CSS"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-034",
+      "gpa": 3.43,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 0,
+        "network": 3,
+        "security": 2,
+        "testing": 3,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Power BI"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-035",
+      "gpa": 3.13,
+      "skills": {
+        "programming": 2,
+        "frontend": 1,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 1,
+        "security": 1,
+        "testing": 3,
+        "mobile": 1,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Git",
+          "Tailwind CSS",
+          "Vue",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-036",
+      "gpa": 2.92,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 4,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 3,
+        "network": 1,
+        "security": 0,
+        "testing": 2,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานชมรม / จิตอาสา",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "MongoDB",
+          "Next.js",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-037",
+      "gpa": 2.86,
+      "skills": {
+        "programming": 4,
+        "frontend": 0,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 3,
+        "cloud": 4,
+        "network": 2,
+        "security": 3,
+        "testing": 3,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "แข่งขัน / Hackathon",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Java",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-038",
+      "gpa": 3.05,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": null,
+        "ml": null,
+        "cloud": null,
+        "network": 1,
+        "security": 2,
+        "testing": 5,
+        "mobile": 3,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "C/C++"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-039",
+      "gpa": null,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 0,
+        "network": 1,
+        "security": 0,
+        "testing": 3,
+        "mobile": 0,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Python",
+          "Selenium"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-040",
+      "gpa": 2.07,
+      "skills": {
+        "programming": 3,
+        "frontend": 4,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 0,
+        "security": 0,
+        "testing": 3,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-041",
+      "gpa": 2.61,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 2,
+        "network": 1,
+        "security": 3,
+        "testing": 2,
+        "mobile": 1,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "Excel",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-042",
+      "gpa": 2.18,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": 4,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 4,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Tailwind CSS"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-043",
+      "gpa": 3.22,
+      "skills": {
+        "programming": 3,
+        "frontend": null,
+        "backend": 5,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 3,
+        "mobile": 0,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "React",
+          "Node.js",
+          "C/C++",
+          "Next.js"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-044",
+      "gpa": 2.29,
+      "skills": {
+        "programming": 4,
+        "frontend": 3,
+        "backend": 1,
+        "database": 1,
+        "dataAnalysis": null,
+        "ml": 1,
+        "cloud": 3,
+        "network": 2,
+        "security": 4,
+        "testing": 3,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 0,
+        "projectTypes": [],
+        "technologies": [],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-045",
+      "gpa": 3.13,
+      "skills": null,
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2568-046",
+      "gpa": 3.04,
+      "skills": {
+        "programming": 3,
+        "frontend": null,
+        "backend": 0,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 3,
+        "security": 1,
+        "testing": 1,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Cypress"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-047",
+      "gpa": 2.87,
+      "skills": {
+        "programming": 3,
+        "frontend": null,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 1,
+        "network": 3,
+        "security": 2,
+        "testing": 4,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Python",
+          "Tailwind CSS",
+          "Java",
+          "React"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-048",
+      "gpa": 4,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 5,
+        "ml": 0,
+        "cloud": 2,
+        "network": 2,
+        "security": 1,
+        "testing": null,
+        "mobile": 4,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Git",
+          "Java",
+          "Python",
+          "SQL"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-049",
+      "gpa": null,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 4,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 3,
+        "network": 1,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 7,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Vue",
+          "Java",
+          "Git"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2568-050",
+      "gpa": 3.16,
+      "skills": {
+        "programming": null,
+        "frontend": 3,
+        "backend": 2,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": null,
+        "cloud": 3,
+        "network": 1,
+        "security": 1,
+        "testing": 2,
+        "mobile": 0,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Git",
+          "Node.js",
+          "React"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-051",
+      "gpa": 3.34,
+      "skills": {
+        "programming": 2,
+        "frontend": null,
+        "backend": 1,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 3,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 1,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Burp Suite",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-052",
+      "gpa": 3.13,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 2,
+        "database": 4,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 2,
+        "network": 3,
+        "security": 1,
+        "testing": 5,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "C/C++",
+          "Spring Boot",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-053",
+      "gpa": 2.2,
+      "skills": {
+        "programming": 2,
+        "frontend": 4,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 1,
+        "network": 0,
+        "security": 1,
+        "testing": 4,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Git",
+          "Jest",
+          "Postman",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-054",
+      "gpa": 3.21,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": null,
+        "ml": 2,
+        "cloud": 2,
+        "network": 1,
+        "security": 0,
+        "testing": 3,
+        "mobile": 3,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "React",
+          "Tailwind CSS",
+          "Vue"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-055",
+      "gpa": 3.1,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 0,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 0,
+        "cloud": 3,
+        "network": 0,
+        "security": 2,
+        "testing": 3,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2568-056",
+      "gpa": 3.88,
+      "skills": {
+        "programming": 2,
+        "frontend": 5,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 3,
+        "network": 2,
+        "security": 3,
+        "testing": 4,
+        "mobile": 1,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Figma"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-057",
+      "gpa": 2.69,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 2,
+        "database": 5,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 2,
+        "network": 3,
+        "security": 3,
+        "testing": 2,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": null
+    },
+    {
+      "studentId": "SIM-2568-058",
+      "gpa": 2.94,
+      "skills": {
+        "programming": 5,
+        "frontend": 1,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": null,
+        "cloud": 5,
+        "network": 3,
+        "security": 1,
+        "testing": 1,
+        "mobile": 0,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 7,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-059",
+      "gpa": 2.89,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": null,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 1,
+        "network": 1,
+        "security": 1,
+        "testing": 1,
+        "mobile": 1,
+        "git": 5
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "งานฟรีแลนซ์",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "C/C++",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-060",
+      "gpa": 2.94,
+      "skills": {
+        "programming": 2,
+        "frontend": 4,
+        "backend": 2,
+        "database": 1,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 2,
+        "network": 2,
+        "security": 1,
+        "testing": null,
+        "mobile": 2,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 6,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Postman",
+          "Selenium",
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-061",
+      "gpa": 3.1,
+      "skills": {
+        "programming": 0,
+        "frontend": 1,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 2,
+        "network": 2,
+        "security": 2,
+        "testing": 3,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-062",
+      "gpa": 3.09,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 1,
+        "cloud": 3,
+        "network": 0,
+        "security": 3,
+        "testing": 2,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Python",
+          "JavaScript",
+          "Java",
+          "BigQuery"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-063",
+      "gpa": 2.89,
+      "skills": {
+        "programming": 0,
+        "frontend": 1,
+        "backend": 4,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 1,
+        "network": null,
+        "security": 2,
+        "testing": 4,
+        "mobile": 4,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Vue",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-064",
+      "gpa": 3.64,
+      "skills": {
+        "programming": 4,
+        "frontend": 4,
+        "backend": 3,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 2,
+        "network": 1,
+        "security": 1,
+        "testing": 2,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Node.js",
+          "React",
+          "Java"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2568-065",
+      "gpa": null,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 1,
+        "database": 1,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 2,
+        "network": 3,
+        "security": 3,
+        "testing": 3,
+        "mobile": 4,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-066",
+      "gpa": 2.77,
+      "skills": {
+        "programming": 5,
+        "frontend": 2,
+        "backend": 2,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 3,
+        "cloud": 1,
+        "network": 0,
+        "security": 2,
+        "testing": 3,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "PostgreSQL",
+          "Express",
+          "Spring Boot",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-067",
+      "gpa": 2.94,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 3,
+        "cloud": 3,
+        "network": null,
+        "security": null,
+        "testing": 4,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Postman",
+          "Selenium",
+          "Java",
+          "JavaScript"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-068",
+      "gpa": 3.61,
+      "skills": {
+        "programming": 2,
+        "frontend": 2,
+        "backend": null,
+        "database": 3,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 0,
+        "network": 2,
+        "security": 3,
+        "testing": 3,
+        "mobile": 0,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "PostgreSQL",
+          "Python",
+          "JavaScript",
+          "Spring Boot"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-069",
+      "gpa": 3.56,
+      "skills": {
+        "programming": 3,
+        "frontend": 2,
+        "backend": 1,
+        "database": 3,
+        "dataAnalysis": 4,
+        "ml": 1,
+        "cloud": 2,
+        "network": null,
+        "security": 2,
+        "testing": 2,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "แข่งขัน / Hackathon",
+          "โครงงานส่วนตัว",
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "BigQuery",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-070",
+      "gpa": 2.9,
+      "skills": {
+        "programming": 2,
+        "frontend": 3,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 0,
+        "network": 2,
+        "security": 0,
+        "testing": 3,
+        "mobile": 1,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 5,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Java",
+          "Figma",
+          "Tailwind CSS"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-071",
+      "gpa": 3.7,
+      "skills": {
+        "programming": 1,
+        "frontend": 0,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 2,
+        "network": 0,
+        "security": 2,
+        "testing": 0,
+        "mobile": null,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา",
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "JavaScript",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-072",
+      "gpa": 3.05,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 5,
+        "network": 4,
+        "security": 2,
+        "testing": 2,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": null,
+        "projectTypes": [
+          "โครงงานส่วนตัว"
+        ],
+        "technologies": [
+          "Windows Server",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-073",
+      "gpa": 2.44,
+      "skills": {
+        "programming": 2,
+        "frontend": 0,
+        "backend": 3,
+        "database": 3,
+        "dataAnalysis": 1,
+        "ml": 2,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 4,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานส่วนตัว",
+          "งานฟรีแลนซ์"
+        ],
+        "technologies": [
+          "Spring Boot"
+        ],
+        "hasEvidence": null
+      }
+    },
+    {
+      "studentId": "SIM-2568-074",
+      "gpa": 2.28,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 0,
+        "security": 1,
+        "testing": 1,
+        "mobile": 2,
+        "git": 1
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Playwright",
+          "Cypress"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-075",
+      "gpa": 3.54,
+      "skills": {
+        "programming": 5,
+        "frontend": 3,
+        "backend": 3,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": 1,
+        "network": 1,
+        "security": 2,
+        "testing": 5,
+        "mobile": 2,
+        "git": 2
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "งานฟรีแลนซ์",
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "Python"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-076",
+      "gpa": null,
+      "skills": {
+        "programming": 4,
+        "frontend": 2,
+        "backend": null,
+        "database": 4,
+        "dataAnalysis": 3,
+        "ml": 2,
+        "cloud": 3,
+        "network": 4,
+        "security": 1,
+        "testing": 2,
+        "mobile": 2,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 2,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "C/C++"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-077",
+      "gpa": 3.47,
+      "skills": {
+        "programming": 3,
+        "frontend": 3,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 3,
+        "ml": 1,
+        "cloud": 2,
+        "network": 0,
+        "security": 1,
+        "testing": 2,
+        "mobile": 0,
+        "git": 4
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "งานชมรม / จิตอาสา"
+        ],
+        "technologies": [
+          "JavaScript",
+          "React",
+          "Java",
+          "Git"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-078",
+      "gpa": 2.44,
+      "skills": {
+        "programming": 3,
+        "frontend": 0,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 2,
+        "ml": 2,
+        "cloud": 1,
+        "network": 2,
+        "security": 2,
+        "testing": 2,
+        "mobile": 1,
+        "git": 3
+      },
+      "portfolio": {
+        "projectCount": 3,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Python",
+          "SQL",
+          "Java",
+          "pandas"
+        ],
+        "hasEvidence": false
+      }
+    },
+    {
+      "studentId": "SIM-2568-079",
+      "gpa": 3.94,
+      "skills": {
+        "programming": 1,
+        "frontend": 2,
+        "backend": 1,
+        "database": 2,
+        "dataAnalysis": 0,
+        "ml": 3,
+        "cloud": 4,
+        "network": 2,
+        "security": 4,
+        "testing": 2,
+        "mobile": 0,
+        "git": null
+      },
+      "portfolio": {
+        "projectCount": 4,
+        "projectTypes": [
+          "แข่งขัน / Hackathon"
+        ],
+        "technologies": [
+          "Java",
+          "JavaScript",
+          "Git",
+          "Linux"
+        ],
+        "hasEvidence": true
+      }
+    },
+    {
+      "studentId": "SIM-2568-080",
+      "gpa": 3.11,
+      "skills": {
+        "programming": 3,
+        "frontend": 1,
+        "backend": 4,
+        "database": 2,
+        "dataAnalysis": 1,
+        "ml": 1,
+        "cloud": null,
+        "network": 1,
+        "security": 1,
+        "testing": 2,
+        "mobile": 2,
+        "git": 5
+      },
+      "portfolio": {
+        "projectCount": 1,
+        "projectTypes": [
+          "โครงงานรายวิชา"
+        ],
+        "technologies": [
+          "React",
+          "PostgreSQL",
+          "JavaScript",
+          "Java"
+        ],
+        "hasEvidence": true
+      }
+    }
+  ]
+}

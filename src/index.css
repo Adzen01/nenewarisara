@@ -364,3 +364,17 @@ img { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ป้ายระบุว่าฟิลด์ใดเป็นข้อมูลจำลอง */
+.sim-tag {
+  display: inline-block;
+  margin-left: var(--space-1);
+  padding: 0 6px;
+  border: 1px solid var(--pending);
+  border-radius: 99px;
+  background: var(--pending-soft);
+  color: var(--pending-ink);
+  font-size: 11px;
+  font-weight: 600;
+  vertical-align: 1px;
+}

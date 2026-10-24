@@ -13,6 +13,19 @@ import {
   years,
 } from './lib/internshipStats'
 import type { Student } from './lib/internshipStats'
+import {
+  applicationStages,
+  acceptedStage,
+  defaultStudentFilters,
+  filterStudents,
+  gpaBands,
+  gpaOf,
+  missingGroupId,
+  skillScoreOf,
+} from './lib/analysis'
+import type { StudentFilters } from './lib/analysis'
+import { maxSkillLevel, minRatedSkills, skillDefinitions, skillLevelMeanings } from './lib/skills'
+import type { SkillId } from './lib/types'
 import './Students.css'
 
 const roles = uniqueSorted(students.map((student) => student.interestedRole))
@@ -24,6 +37,55 @@ function Fact({ label, value }: { label: string; value: string | number | null |
       <dt>{label}</dt>
       <dd>{value === null || value === undefined || value === '' ? '—' : value}</dd>
     </div>
+  )
+}
+
+function formatSkillScore(score: number | null) {
+  return score === null ? 'ข้อมูลไม่เพียงพอ' : score.toFixed(2)
+}
+
+function SkillBars({ student }: { student: Student }) {
+  const skills = student.profile?.skills
+  if (!skills) return <p className="detail-muted">ไม่มีผลประเมินทักษะ</p>
+  return (
+    <ul className="skill-bars" aria-label="ระดับทักษะรายด้าน (0–5)">
+      {skillDefinitions.map((skill) => {
+        const level = skills[skill.id]
+        return (
+          <li key={skill.id}>
+            <span className="skill-bars-name">{skill.label}</span>
+            <span className="skill-bars-track" aria-hidden="true">
+              {level !== null && <span style={{ width: `${(level / maxSkillLevel) * 100}%` }} />}
+            </span>
+            <span className={`skill-bars-value${level === null ? ' is-missing' : ''}`}>
+              {level === null ? 'ไม่มีข้อมูล' : `${level} · ${skillLevelMeanings[level].label}`}
+            </span>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
+function PortfolioDetail({ student }: { student: Student }) {
+  const portfolio = student.profile?.portfolio
+  const evidence =
+    portfolio?.hasEvidence === true ? 'มีหลักฐานผลงาน' : portfolio?.hasEvidence === false ? 'ยังไม่มีหลักฐานผลงาน' : 'ไม่มีข้อมูล'
+  return (
+    <section className="detail-section" aria-labelledby="student-detail-portfolio">
+      <h3 id="student-detail-portfolio">Portfolio <span className="sim-tag">ข้อมูลจำลอง</span></h3>
+      {portfolio ? (
+        <dl className="fact-list">
+          <Fact label="จำนวนโครงการ" value={portfolio.projectCount === null ? 'ไม่มีข้อมูล' : `${portfolio.projectCount} โครงการ`} />
+          <Fact label="หลักฐานผลงาน" value={evidence} />
+          <Fact label="ประเภทโครงการ" value={portfolio.projectTypes.join(', ')} />
+          <Fact label="เทคโนโลยี" value={portfolio.technologies.join(', ')} />
+        </dl>
+      ) : (
+        <p className="detail-muted">ไม่มีข้อมูล Portfolio</p>
+      )}
+      <p className="detail-muted">ชุดข้อมูลเก็บเพียงสถานะว่ามีหลักฐานผลงานหรือไม่ ไม่มีลิงก์ผลงาน</p>
+    </section>
   )
 }
 
@@ -45,6 +107,17 @@ function StudentDetail({ student }: { student: Student }) {
           <Fact label="ขั้นตอนการสมัคร" value={student.applicationStage} />
         </dl>
       </section>
+
+      <section className="detail-section" aria-labelledby="student-detail-gpa">
+        <h3 id="student-detail-gpa">ผลการเรียนและทักษะ <span className="sim-tag">ข้อมูลจำลอง</span></h3>
+        <dl className="fact-list">
+          <Fact label="GPA สะสม (0–4)" value={gpaOf(student)?.toFixed(2) ?? 'ไม่มีข้อมูล'} />
+          <Fact label="คะแนนทักษะเฉลี่ย (0–5)" value={formatSkillScore(skillScoreOf(student))} />
+        </dl>
+        <SkillBars student={student} />
+      </section>
+
+      <PortfolioDetail student={student} />
 
       <section className="detail-section" aria-labelledby="student-detail-placement">
         <h3 id="student-detail-placement">ที่ฝึกงานที่ได้รับ</h3>
@@ -70,40 +143,14 @@ function StudentDetail({ student }: { student: Student }) {
 }
 
 export default function Students() {
-  const [search, setSearch] = useState('')
-  const [year, setYear] = useState('all')
-  const [status, setStatus] = useState('all')
-  const [role, setRole] = useState('all')
+  const [filters, setFilters] = useState<StudentFilters>(defaultStudentFilters)
   const [page, setPage] = useState(1)
   const [selectedId, setSelectedId] = useState<string | null>(null)
 
-  const keyword = search.trim().toLocaleLowerCase('th')
-  const hasFilters = keyword !== '' || year !== 'all' || status !== 'all' || role !== 'all'
-
-  const filteredStudents = students.filter((student) => {
-    const searchableText = [
-      student.studentId,
-      student.prefix,
-      student.firstName,
-      student.lastName,
-      student.placement?.company,
-      student.placement?.position,
-    ]
-      .join(' ')
-      .toLocaleLowerCase('th')
-
-    const matchesStatus =
-      status === 'all' ||
-      (status === 'accepted' && student.accepted) ||
-      (status === 'pending' && !student.accepted)
-
-    return (
-      searchableText.includes(keyword) &&
-      (year === 'all' || String(student.academicYearBE) === year) &&
-      matchesStatus &&
-      (role === 'all' || student.interestedRole === role)
-    )
-  })
+  const hasFilters = (Object.keys(filters) as (keyof StudentFilters)[]).some(
+    (key) => key !== 'minLevel' && filters[key].trim() !== defaultStudentFilters[key],
+  )
+  const filteredStudents = filterStudents(students, filters)
 
   const totalPages = Math.max(1, Math.ceil(filteredStudents.length / pageSize))
   const currentPage = Math.min(page, totalPages)
@@ -111,18 +158,15 @@ export default function Students() {
   const visibleStudents = filteredStudents.slice(startIndex, startIndex + pageSize)
   const selectedStudent = students.find((student) => student.recordId === selectedId) ?? null
 
-  function updateFilter(setter: (value: string) => void) {
+  function updateFilter(key: keyof StudentFilters) {
     return (value: string) => {
-      setter(value)
+      setFilters((current) => ({ ...current, [key]: value }))
       setPage(1)
     }
   }
 
   function resetFilters() {
-    setSearch('')
-    setYear('all')
-    setStatus('all')
-    setRole('all')
+    setFilters(defaultStudentFilters)
     setPage(1)
   }
 
@@ -131,7 +175,7 @@ export default function Students() {
       <PageHeader
         id="students-title"
         title="ข้อมูลนิสิต"
-        description="ค้นหาและกรองนิสิตตามปี สถานะ และสายงานที่สนใจ แล้วเปิดดูรายละเอียดรายคน"
+        description="ค้นหาและกรองนิสิตตามปี สถานะ สายงานที่สนใจ GPA และระดับทักษะ แล้วเปิดดูรายละเอียดรายคน"
       />
 
       <div className="panel filter-panel">
@@ -144,15 +188,15 @@ export default function Students() {
                 id="student-search"
                 type="search"
                 placeholder="ชื่อ รหัสนิสิต บริษัท หรือตำแหน่ง"
-                value={search}
-                onChange={(event) => updateFilter(setSearch)(event.target.value)}
+                value={filters.keyword}
+                onChange={(event) => updateFilter('keyword')(event.target.value)}
               />
             </div>
           </div>
 
           <div className="field">
             <label className="field-label" htmlFor="student-year">ปีฝึกงาน</label>
-            <select id="student-year" value={year} onChange={(event) => updateFilter(setYear)(event.target.value)}>
+            <select id="student-year" value={filters.year} onChange={(event) => updateFilter('year')(event.target.value)}>
               <option value="all">ทุกปี</option>
               {years.map((item) => <option key={item} value={item}>{item}</option>)}
             </select>
@@ -160,18 +204,50 @@ export default function Students() {
 
           <div className="field">
             <label className="field-label" htmlFor="student-status">สถานะ</label>
-            <select id="student-status" value={status} onChange={(event) => updateFilter(setStatus)(event.target.value)}>
+            <select id="student-status" value={filters.status} onChange={(event) => updateFilter('status')(event.target.value)}>
               <option value="all">ทุกสถานะ</option>
               <option value="accepted">{statusLabel.accepted}</option>
-              <option value="pending">{statusLabel.pending}</option>
+              <option value="pending">{statusLabel.pending} (ทุกขั้นตอน)</option>
+              <optgroup label="ขั้นตอนของผู้ที่ยังไม่ได้">
+                {applicationStages.filter((stage) => stage !== acceptedStage).map((stage) => (
+                  <option key={stage} value={stage}>{stage}</option>
+                ))}
+              </optgroup>
             </select>
           </div>
 
           <div className="field">
             <label className="field-label" htmlFor="student-role">สายงานที่สนใจ</label>
-            <select id="student-role" value={role} onChange={(event) => updateFilter(setRole)(event.target.value)}>
+            <select id="student-role" value={filters.role} onChange={(event) => updateFilter('role')(event.target.value)}>
               <option value="all">ทุกสายงาน</option>
               {roles.map((item) => <option key={item} value={item}>{item}</option>)}
+            </select>
+          </div>
+
+          <div className="field">
+            <label className="field-label" htmlFor="student-gpa">ช่วง GPA</label>
+            <select id="student-gpa" value={filters.gpaBand} onChange={(event) => updateFilter('gpaBand')(event.target.value)}>
+              <option value="all">ทุกช่วง</option>
+              {gpaBands.map((band) => <option key={band.id} value={band.id}>{band.label}</option>)}
+              <option value={missingGroupId}>ไม่มีข้อมูล GPA</option>
+            </select>
+          </div>
+
+          <div className="field">
+            <label className="field-label" htmlFor="student-skill">ทักษะ</label>
+            <select id="student-skill" value={filters.skill} onChange={(event) => updateFilter('skill')(event.target.value)}>
+              <option value="all">ทุกทักษะ</option>
+              {skillDefinitions.map((skill) => <option key={skill.id} value={skill.id}>{skill.label}</option>)}
+            </select>
+          </div>
+
+          <div className="field field-narrow">
+            <label className="field-label" htmlFor="student-level">ระดับอย่างน้อย</label>
+            <select id="student-level" value={filters.minLevel} disabled={filters.skill === 'all'}
+              onChange={(event) => updateFilter('minLevel')(event.target.value)}>
+              {skillLevelMeanings.filter((item) => item.level > 0).map((item) => (
+                <option key={item.level} value={item.level}>{item.level} · {item.label}</option>
+              ))}
             </select>
           </div>
 
@@ -183,6 +259,7 @@ export default function Students() {
 
       <p className="result-count" aria-live="polite">
         พบ <strong>{formatNumber(filteredStudents.length)}</strong> จาก {formatNumber(students.length)} รายการ
+        {filters.skill !== 'all' && ` · ทักษะ ${skillDefinitions.find((skill) => skill.id === (filters.skill as SkillId))?.label} ระดับ ${filters.minLevel} ขึ้นไป (ไม่รวมผู้ที่ไม่มีผลประเมินทักษะนี้)`}
       </p>
 
       {filteredStudents.length === 0 ? (
@@ -205,6 +282,8 @@ export default function Students() {
                   <th scope="col">นิสิต</th>
                   <th scope="col">ปีฝึกงาน</th>
                   <th scope="col">สายงานที่สนใจ</th>
+                  <th scope="col">GPA</th>
+                  <th scope="col">ทักษะเฉลี่ย</th>
                   <th scope="col">สถานะ</th>
                   <th scope="col">สถานประกอบการ</th>
                   <th scope="col"><span className="visually-hidden">รายละเอียด</span></th>
@@ -219,6 +298,8 @@ export default function Students() {
                     </td>
                     <td data-label="ปีฝึกงาน" className="cell-number">{student.academicYearBE}</td>
                     <td data-label="สายงานที่สนใจ">{student.interestedRole || '—'}</td>
+                    <td data-label="GPA" className="cell-number">{gpaOf(student)?.toFixed(2) ?? '—'}</td>
+                    <td data-label="ทักษะเฉลี่ย (0–5)" className="cell-number">{skillScoreOf(student)?.toFixed(2) ?? '—'}</td>
                     <td data-label="สถานะ">
                       <StatusBadge accepted={student.accepted} />
                       {!student.accepted && student.applicationStage && (
@@ -266,7 +347,8 @@ export default function Students() {
       )}
 
       <p className="page-note">
-        ข้อมูลจำลองสำหรับสาธิต · สายงานที่สนใจและตำแหน่งฝึกงานที่ได้รับเป็นคนละข้อมูล · เครื่องหมาย — หมายถึงไม่มีข้อมูลในชุดข้อมูล
+        ข้อมูลจำลองสำหรับสาธิต · สายงานที่สนใจและตำแหน่งฝึกงานที่ได้รับเป็นคนละข้อมูล · เครื่องหมาย — หมายถึงไม่มีข้อมูลในชุดข้อมูล ·
+        ทักษะเฉลี่ยคำนวณเมื่อมีผลประเมินอย่างน้อย {minRatedSkills} จาก {skillDefinitions.length} ทักษะ และไม่ใช่เปอร์เซ็นต์โอกาสได้ฝึกงาน
       </p>
 
       <DetailDrawer

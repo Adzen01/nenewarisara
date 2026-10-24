@@ -1,7 +1,27 @@
 import { useState } from 'react'
 import PageHeader from './components/PageHeader'
 import { InfoIcon } from './components/Icons'
-import { students, uniqueSorted } from './lib/internshipStats'
+import { fullName, students, uniqueSorted } from './lib/internshipStats'
+import {
+  checklistStorageKey,
+  isBoolean,
+  isSkillLevel,
+  manualSkillsStorageKey,
+  readRecord,
+  writeRecord,
+} from './lib/checklistStorage'
+import {
+  computeSkillGap,
+  emptySkillLevels,
+  maxSkillLevel,
+  prioritizeGaps,
+  roleBenchmarks,
+  skillActivities,
+  skillDefinitions,
+  skillLevelMeanings,
+} from './lib/skills'
+import type { SkillGapRow } from './lib/skills'
+import type { SkillLevels } from './lib/types'
 import './Preparation.css'
 
 type Task = {
@@ -41,31 +61,24 @@ function getRoleTasks(guide: Guide): Task[] {
   ]
 }
 
-const storageKey = 'ce-internship-preparation-v1'
-
-function readSavedChecks(): Record<string, boolean> {
-  try {
-    const raw = localStorage.getItem(storageKey)
-    if (!raw) return {}
-
-    const value: unknown = JSON.parse(raw)
-
-    if (
-      typeof value !== 'object' ||
-      value === null ||
-      Array.isArray(value)
-    ) {
-      return {}
-    }
-
-    return Object.fromEntries(
-      Object.entries(value).filter(
-        ([, checked]) => typeof checked === 'boolean',
-      ),
-    )
-  } catch {
-    return {}
+function readManualLevels(): SkillLevels {
+  const saved = readRecord(manualSkillsStorageKey, isSkillLevel)
+  const levels = emptySkillLevels()
+  for (const skill of skillDefinitions) {
+    if (saved[skill.id] !== undefined) levels[skill.id] = saved[skill.id]
   }
+  return levels
+}
+
+const sortedStudents = [...students].sort((a, b) => a.studentId.localeCompare(b.studentId))
+
+function GapMeter({ row }: { row: SkillGapRow }) {
+  return (
+    <span className="gap-meter" aria-hidden="true">
+      {row.current !== null && <span className="gap-current" style={{ width: `${(row.current / maxSkillLevel) * 100}%` }} />}
+      <span className="gap-target" style={{ left: `${(row.target / maxSkillLevel) * 100}%` }} />
+    </span>
+  )
 }
 
 function getGuide(role: string): Guide {
@@ -194,8 +207,46 @@ export default function Preparation() {
   const [selectedRole, setSelectedRole] = useState(
     () => roles.find((role) => role.toLowerCase().includes('frontend')) ?? roles[0] ?? '',
   )
-  const [checked, setChecked] = useState<Record<string, boolean>>(readSavedChecks)
+  const [checked, setChecked] = useState<Record<string, boolean>>(() => readRecord(checklistStorageKey, isBoolean))
   const [saveError, setSaveError] = useState('')
+  const [source, setSource] = useState<'sample' | 'manual'>('sample')
+  const [sampleId, setSampleId] = useState(sortedStudents[0]?.recordId ?? '')
+  const [manualLevels, setManualLevels] = useState<SkillLevels>(readManualLevels)
+
+  const sampleStudent = sortedStudents.find((student) => student.recordId === sampleId) ?? null
+  const currentLevels: SkillLevels | null = source === 'manual' ? manualLevels : sampleStudent?.profile?.skills ?? null
+  const benchmark = roleBenchmarks[selectedRole]
+  const gapRows = benchmark ? computeSkillGap(currentLevels, benchmark) : []
+  const knownRows = gapRows.filter((row) => row.gap !== null)
+  const missingRows = gapRows.filter((row) => row.gap === null)
+  const priorities = prioritizeGaps(gapRows)
+  const insufficient = !benchmark || knownRows.length === 0
+  const metCount = knownRows.filter((row) => row.gap === 0).length
+  const gapTasks = priorities.flatMap((row) =>
+    skillActivities[row.skill].map((text, index) => ({ key: `gap:${selectedRole}:${row.skill}:${index}`, text })),
+  )
+  const gapCompleted = gapTasks.filter((task) => checked[task.key]).length
+
+  function chooseSample(recordId: string) {
+    setSampleId(recordId)
+    const role = sortedStudents.find((student) => student.recordId === recordId)?.interestedRole
+    // ใช้สายงานที่นิสิตสนใจเป็นค่าเริ่มต้น ผู้ใช้เปลี่ยนสายงานเป้าหมายเองได้
+    if (role && roles.includes(role)) setSelectedRole(role)
+  }
+
+  function setManualLevel(skill: keyof SkillLevels, value: string) {
+    const next = { ...manualLevels, [skill]: value === '' ? null : Number(value) }
+    setManualLevels(next)
+    const toSave = Object.fromEntries(Object.entries(next).filter(([, level]) => level !== null))
+    if (!writeRecord(manualSkillsStorageKey, toSave)) {
+      setSaveError('เบราว์เซอร์บันทึกไม่ได้ ค่าที่กรอกจะอยู่เฉพาะระหว่างเปิดหน้านี้')
+    }
+  }
+
+  function resetManual() {
+    setManualLevels(emptySkillLevels())
+    writeRecord(manualSkillsStorageKey, {})
+  }
 
   const guide = getGuide(selectedRole)
   const roleTasks = getRoleTasks(guide).map((task) => ({ ...task, key: `role:${selectedRole}:${task.id}` }))
@@ -206,13 +257,7 @@ export default function Preparation() {
   function toggleTask(key: string) {
     const next = { ...checked, [key]: !checked[key] }
     setChecked(next)
-
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(next))
-      setSaveError('')
-    } catch {
-      setSaveError('เบราว์เซอร์บันทึกไม่ได้ รายการที่ติ๊กจะอยู่เฉพาะระหว่างเปิดหน้านี้')
-    }
+    setSaveError(writeRecord(checklistStorageKey, next) ? '' : 'เบราว์เซอร์บันทึกไม่ได้ รายการที่ติ๊กจะอยู่เฉพาะระหว่างเปิดหน้านี้')
   }
 
   function renderTask(task: Task & { key: string }) {
@@ -227,7 +272,7 @@ export default function Preparation() {
 
   const roleSelect = (
     <div className="field prep-role-field">
-      <label className="field-label" htmlFor="prep-role">สายงานที่สนใจ</label>
+      <label className="field-label" htmlFor="prep-role">สายงานเป้าหมาย</label>
       <select
         id="prep-role"
         value={selectedRole}
@@ -245,16 +290,169 @@ export default function Preparation() {
       <PageHeader
         id="prep-title"
         title="เตรียมความพร้อม"
-        description="เลือกสายงาน ดูหัวข้อที่ควรฝึกและไอเดียโปรเจกต์ แล้วใช้เช็กลิสต์ติดตามสิ่งที่ลงมือทำ"
+        description="เลือกนิสิตตัวอย่างหรือกรอกระดับทักษะของตนเอง เทียบกับเกณฑ์ตัวอย่างของสายงานเป้าหมาย แล้วใช้เช็กลิสต์ติดตามสิ่งที่ลงมือทำ"
         actions={roleSelect}
       />
 
       <p className="callout">
         <InfoIcon />
         <span>
-          เนื้อหานี้เป็นคำแนะนำเบื้องต้น ไม่ใช่ข้อกำหนดของบริษัท ควรตรวจคุณสมบัติจากประกาศรับสมัครจริงก่อนสมัคร
+          เกณฑ์ระดับทักษะและเนื้อหานี้เป็นตัวอย่างที่ทีมผู้จัดทำกำหนด ไม่ใช่ข้อกำหนดของบริษัท ควรตรวจคุณสมบัติจากประกาศรับสมัครจริงก่อนสมัคร ·
+          Skill Gap ไม่ใช่คะแนนหรือเปอร์เซ็นต์โอกาสได้ฝึกงาน
         </span>
       </p>
+
+      <div className="gap-layout">
+        <section className="panel" aria-labelledby="gap-input-title">
+          <header className="panel-header">
+            <div>
+              <h2 id="gap-input-title">ระดับทักษะปัจจุบัน</h2>
+              <p className="panel-meta">ระดับ 0–5 · เลือกแหล่งข้อมูล</p>
+            </div>
+          </header>
+          <div className="segmented" role="group" aria-label="แหล่งข้อมูลระดับทักษะ">
+            <button type="button" aria-pressed={source === 'sample'} onClick={() => setSource('sample')}>นิสิตตัวอย่าง</button>
+            <button type="button" aria-pressed={source === 'manual'} onClick={() => setSource('manual')}>กรอกเอง</button>
+          </div>
+
+          {source === 'sample' ? (
+            <div className="field">
+              <label className="field-label" htmlFor="gap-sample">นิสิตตัวอย่าง <span className="sim-tag">ข้อมูลจำลอง</span></label>
+              <select id="gap-sample" value={sampleId} onChange={(event) => chooseSample(event.target.value)}>
+                {sortedStudents.map((student) => (
+                  <option key={student.recordId} value={student.recordId}>
+                    {student.studentId} · {fullName(student)} · {student.interestedRole ?? 'ไม่ระบุสายงาน'}
+                  </option>
+                ))}
+              </select>
+              {sampleStudent && !sampleStudent.profile?.skills && (
+                <p className="form-error">นิสิตคนนี้ไม่มีผลประเมินทักษะ</p>
+              )}
+            </div>
+          ) : (
+            <>
+              <div className="gap-manual">
+                {skillDefinitions.map((skill) => (
+                  <div className="field" key={skill.id}>
+                    <label className="field-label" htmlFor={`manual-${skill.id}`}>{skill.label}</label>
+                    <select id={`manual-${skill.id}`} value={manualLevels[skill.id] ?? ''} onChange={(event) => setManualLevel(skill.id, event.target.value)}>
+                      <option value="">ไม่ระบุ</option>
+                      {skillLevelMeanings.map((item) => <option key={item.level} value={item.level}>{item.level} · {item.label}</option>)}
+                    </select>
+                  </div>
+                ))}
+              </div>
+              <button type="button" className="button button-secondary" onClick={resetManual}>ล้างค่าที่กรอก</button>
+              <p className="panel-meta">ค่าที่กรอกบันทึกในเบราว์เซอร์นี้เท่านั้น · “ไม่ระบุ” จะไม่ถูกนับเป็นระดับ 0</p>
+            </>
+          )}
+
+          <details className="gap-criteria">
+            <summary>ดูเกณฑ์ของสายงานและความหมายของระดับ</summary>
+            <p className="panel-meta">เกณฑ์ตัวอย่างของทีม · สายงาน {selectedRole || '—'}</p>
+            {benchmark ? (
+              <ul className="gap-criteria-list">
+                {skillDefinitions.filter((skill) => benchmark[skill.id] !== undefined).map((skill) => (
+                  <li key={skill.id}><span>{skill.label}</span><strong>ระดับ {benchmark[skill.id]}</strong></li>
+                ))}
+              </ul>
+            ) : <p className="detail-muted">ข้อมูลไม่เพียงพอ: ยังไม่มีเกณฑ์สำหรับสายงานนี้</p>}
+            <dl className="gap-levels">
+              {skillLevelMeanings.map((item) => (
+                <div key={item.level}><dt>{item.level} · {item.label}</dt><dd>{item.description}</dd></div>
+              ))}
+            </dl>
+          </details>
+        </section>
+
+        <section className="panel" aria-labelledby="gap-compare-title">
+          <header className="panel-header">
+            <div>
+              <h2 id="gap-compare-title">เปรียบเทียบกับเกณฑ์สายงาน</h2>
+              <p className="panel-meta">Skill Gap = max(ระดับเป้าหมาย − ระดับปัจจุบัน, 0)</p>
+            </div>
+          </header>
+
+          {insufficient ? (
+            <div className="empty-state" role="status">
+              <p className="empty-state-title">ข้อมูลไม่เพียงพอ</p>
+              <p className="empty-state-text">
+                {benchmark ? 'ยังไม่มีระดับทักษะที่ตรงกับเกณฑ์ของสายงานนี้ เลือกนิสิตคนอื่นหรือกรอกระดับทักษะของตนเอง' : 'ยังไม่มีเกณฑ์ตัวอย่างสำหรับสายงานนี้'}
+              </p>
+            </div>
+          ) : (
+            <>
+              <dl className="gap-summary" aria-live="polite">
+                <div><dt>ถึงเกณฑ์แล้ว</dt><dd>{metCount}<small>/ {gapRows.length} ทักษะ</small></dd></div>
+                <div><dt>ยังต่ำกว่าเกณฑ์</dt><dd>{priorities.length}<small>ทักษะ</small></dd></div>
+                <div><dt>ข้อมูลไม่เพียงพอ</dt><dd>{missingRows.length}<small>ทักษะ</small></dd></div>
+              </dl>
+              <div className="gap-legend" aria-hidden="true">
+                <span><i className="gap-key-current" />ระดับปัจจุบัน</span>
+                <span><i className="gap-key-target" />ระดับเป้าหมาย</span>
+              </div>
+              <table className="gap-table">
+                <caption className="visually-hidden">Skill Gap รายทักษะ สายงาน {selectedRole}</caption>
+                <thead>
+                  <tr><th scope="col">ทักษะ</th><th scope="col">ปัจจุบัน</th><th scope="col">เป้าหมาย</th><th scope="col"><span className="visually-hidden">กราฟ</span></th><th scope="col">Gap</th></tr>
+                </thead>
+                <tbody>
+                  {gapRows.map((row) => (
+                    <tr key={row.skill}>
+                      <th scope="row">{row.label}</th>
+                      <td>{row.current ?? '—'}</td>
+                      <td>{row.target}</td>
+                      <td className="gap-meter-cell"><GapMeter row={row} /></td>
+                      <td>
+                        {row.gap === null
+                          ? <span className="gap-badge is-missing">ข้อมูลไม่เพียงพอ</span>
+                          : row.gap === 0
+                            ? <span className="gap-badge is-met">ถึงเกณฑ์</span>
+                            : <span className="gap-badge is-gap">ขาด {row.gap}</span>}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </>
+          )}
+        </section>
+      </div>
+
+      <section className="panel" aria-labelledby="gap-priority-title">
+        <header className="panel-header">
+          <div>
+            <h2 id="gap-priority-title">ทักษะที่ควรฝึกก่อน</h2>
+            <p className="panel-meta">เรียงจาก Gap มากไปน้อย ถ้าเท่ากันเรียงตามระดับเป้าหมาย · {gapTasks.length > 0 ? `ทำแล้ว ${gapCompleted} จาก ${gapTasks.length} กิจกรรม` : 'ไม่มีกิจกรรม'}</p>
+          </div>
+        </header>
+        {insufficient ? (
+          <p className="detail-muted">ข้อมูลไม่เพียงพอ จึงยังไม่จัดลำดับทักษะ</p>
+        ) : priorities.length === 0 ? (
+          <p className="detail-muted">
+            ถึงเกณฑ์ตัวอย่างทุกทักษะที่มีข้อมูล{missingRows.length > 0 && ` · ยังประเมินไม่ได้ ${missingRows.length} ทักษะเพราะข้อมูลไม่เพียงพอ`}
+          </p>
+        ) : (
+          <ol className="gap-priorities">
+            {priorities.map((row, index) => (
+              <li key={row.skill} className={index < 3 ? 'is-top' : undefined}>
+                <div className="gap-priority-head">
+                  <span className="gap-rank">{index + 1}</span>
+                  <strong>{row.label}</strong>
+                  <span className="gap-badge is-gap">ระดับ {row.current} → {row.target} (ขาด {row.gap})</span>
+                </div>
+                <ul className="prep-tasks">
+                  {skillActivities[row.skill].map((text, activityIndex) => renderTask({ id: `${row.skill}-${activityIndex}`, text, key: `gap:${selectedRole}:${row.skill}:${activityIndex}` }))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+        )}
+        {!insufficient && missingRows.length > 0 && priorities.length > 0 && (
+          <p className="panel-meta">ไม่ได้จัดลำดับ {missingRows.map((row) => row.label).join(', ')} เพราะข้อมูลไม่เพียงพอ</p>
+        )}
+        {saveError && <p className="form-error" role="status">{saveError}</p>}
+      </section>
 
       <div className="prep-layout">
         <div className="prep-guide">

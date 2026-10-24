@@ -53,6 +53,17 @@
 .co-positions li:last-child { border-bottom: 0; }
 .co-positions strong { flex-shrink: 0; font-variant-numeric: tabular-nums; }
 
+/* ---------- Position skills ---------- */
+.co-positions li.co-position-item { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
+.co-position-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
+.co-position-row span:last-child { flex-shrink: 0; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.co-position-role { color: var(--ink-3); font-size: var(--fs-xs); }
+.co-skill-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.co-skill-chips li { display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px 2px 10px; border: 1px solid var(--line); border-radius: 99px; background: var(--surface-muted); font-size: var(--fs-xs); }
+.co-skill-chips strong { padding: 0 6px; border-radius: 99px; background: var(--accent-soft); color: var(--accent-ink); font-weight: 600; }
+.co-position-skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--space-3); margin: 0; padding: 0; list-style: none; }
+.co-position-skills li { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+
 @media (max-width: 680px) {
   .co-summary { gap: var(--space-3) var(--space-5); }
   .co-summary-scope { flex-basis: 100%; margin-left: 0; }

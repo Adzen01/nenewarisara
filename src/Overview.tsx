@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import PageHeader from './components/PageHeader'
+import OverviewAnalysis from './OverviewAnalysis'
 import { CompareIcon, FilterIcon } from './components/Icons'
 import {
   datasetNote,
@@ -330,6 +331,8 @@ export default function Overview() {
           </article>
         </div>
       </div>
+
+      <OverviewAnalysis rows={selectedRows} scopeLabel={selectedYear === 'all' ? 'ทุกปี' : `ปี ${selectedYear}`} />
 
       <p className="page-note">
         {datasetNote} · ตัวเลขทั้งหมดเป็นการนับเชิงพรรณนา ไม่ได้บอกเหตุผลหรือโอกาสในการได้รับการตอบรับ

@@ -1,75 +1,59 @@
-# React + TypeScript + Vite
+# CE Internship Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dashboard สำรวจข้อมูลฝึกงานสำหรับนิสิตวิศวกรรมคอมพิวเตอร์ปี 2–4
+ใช้ดูความสัมพันธ์เชิงพรรณนาของ GPA ทักษะ และ Portfolio กับสถานะการได้ที่ฝึกงาน และดูทักษะที่ควรพัฒนาตามสายงาน
 
-Currently, two official plugins are available:
+> **ข้อมูลทั้งหมดเป็นข้อมูลจำลอง** ใช้สาธิตวิธีวิเคราะห์เท่านั้น ไม่ใช้ยืนยันปัจจัยความสำเร็จหรือตลาดงานจริง
+> และไม่สรุปความสัมพันธ์เป็นเหตุและผล
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+React 19 + TypeScript + Vite · ไม่มีไลบรารีกราฟเพิ่ม (วาดด้วย SVG/CSS)
 
-## React Compiler
+## วิธีรัน
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm ci
+npm run dev            # เปิด http://localhost:5173
+npm test               # ชุดทดสอบ (Node test runner)
+npm run data:check     # ตรวจคุณภาพข้อมูล → docs/data-quality.md
+npm run data:generate  # สร้าง src/data/profiles.json ใหม่ (seed คงที่ ผลเหมือนเดิม)
+npm run build          # type-check + build ไปที่ dist/
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+ต้องใช้ Node 22.12 ขึ้นไป (ชุดทดสอบและสคริปต์ข้อมูลรันไฟล์ TypeScript ด้วย `--experimental-strip-types`)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## หน้าเว็บ
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| หน้า | สิ่งที่ทำได้ |
+| --- | --- |
+| ภาพรวม | KPI และกราฟเดิม (สถานะรายปี สัดส่วน สายงานที่สนใจ บริษัท จังหวัด) + ส่วนวิเคราะห์: Scatter GPA × คะแนนทักษะเฉลี่ย (สีและรูปทรงตามสถานะ, ชี้ดูรายละเอียด), อัตราได้ที่ฝึกงานแยกช่วง GPA และกลุ่มจำนวนโครงการ (แสดง ตัวตั้ง ÷ ตัวหาร), Heatmap ทักษะเฉลี่ยตามสายงาน (พร้อม n) · ทุกกราฟคำนวณตามตัวกรองปีและสายงาน |
+| ข้อมูลนิสิต | ค้นหา + กรองตามปี สถานะ/ขั้นตอนการสมัคร สายงาน ช่วง GPA และทักษะระดับขั้นต่ำ · แบ่งหน้า · รายละเอียดรายคน (GPA ทักษะ 12 ด้าน Portfolio ที่ฝึกงาน) |
+| สถานประกอบการ | บริษัท จังหวัด ตำแหน่ง (เดิม) + ทักษะที่เกี่ยวข้องกับแต่ละตำแหน่ง ระบุชัดว่าเป็นเกณฑ์ตัวอย่างของทีม |
+| เตรียมความพร้อม | เลือกนิสิตตัวอย่างหรือกรอกระดับทักษะเอง → เลือกสายงานเป้าหมาย → ตาราง Skill Gap → ทักษะที่ควรฝึกก่อนพร้อมกิจกรรมและเช็กลิสต์ (บันทึกใน localStorage) · เปิดดูเกณฑ์ได้ · ข้อมูลไม่ครบแสดง "ข้อมูลไม่เพียงพอ" |
 
+## ลำดับสาธิต (แนะนำ)
+
+1. **ภาพรวม** — ชี้ KPI เดิม → เลือกปี 2567 ให้เห็นว่าทุกตัวเลขเปลี่ยนตาม → เลื่อนลงไปที่ส่วนวิเคราะห์ อ่านกล่องคำเตือนข้อมูลจำลอง →
+   ชี้จุดบน Scatter ให้เห็น tooltip → ชี้อัตราแยกช่วง GPA ว่าทุกแท่งแสดง ตัวตั้ง ÷ ตัวหาร และมีป้าย "ตัวอย่างน้อย" → เลือกสายงาน Cybersecurity ให้เห็นตัวอย่างน้อยลง →
+   Heatmap ชี้แถวที่ถูกเน้นและค่า n
+2. **ข้อมูลนิสิต** — กรอง GPA 3.50–4.00 + ทักษะ Backend ระดับ ≥ 3 → เปิดรายละเอียดคนหนึ่งดู GPA ทักษะ และ Portfolio → ลองกรอง "ไม่มีข้อมูล GPA" ให้เห็นการจัดการค่าว่าง
+3. **สถานประกอบการ** — ดูแผง "ทักษะที่เกี่ยวข้องกับตำแหน่ง" และกดดูตำแหน่งของบริษัทหนึ่ง เน้นข้อความว่าเป็นเกณฑ์ตัวอย่างของทีม
+4. **เตรียมความพร้อม** — เลือกนิสิตตัวอย่าง (สายงานเป้าหมายเปลี่ยนตาม) → ดูตาราง Gap → เลือก SIM-2566-080 (ไม่มีผลประเมินทักษะ) ให้เห็น "ข้อมูลไม่เพียงพอ" →
+   สลับเป็น "กรอกเอง" กรอก 2–3 ทักษะ → ติ๊กกิจกรรม → รีเฟรชหน้าให้เห็นว่ายังบันทึกอยู่ → เปิด "ดูเกณฑ์ของสายงาน"
+
+## โครงสร้างไฟล์ที่เกี่ยวข้อง
+
+```
+src/data/internships.json     ข้อมูลต้นฉบับ (ไม่แก้ไข)
+src/data/profiles.json        ข้อมูลจำลอง GPA / ทักษะ / Portfolio (สร้างด้วยสคริปต์)
+src/lib/types.ts              ชนิดข้อมูลกลาง
+src/lib/skills.ts             ทักษะ ความหมายระดับ เกณฑ์ตัวอย่างสายงาน Skill Gap
+src/lib/analysis.ts           นิยามสถานะ ช่วง GPA/โครงการ อัตราตอบรับ Heatmap ตัวกรองนิสิต
+src/lib/checklistStorage.ts   อ่าน/เขียน localStorage อย่างปลอดภัย
+src/lib/internshipStats.ts    โหลดและเชื่อมข้อมูลด้วย studentId
+src/OverviewAnalysis.tsx      Scatter, อัตราตอบรับ, Heatmap
+scripts/generate-profiles.ts  สร้างข้อมูลจำลองแบบทำซ้ำได้
+scripts/check-data.ts         ตรวจรหัสซ้ำ ค่าว่าง ช่วงค่า ความสอดคล้อง
+tests/                        ชุดทดสอบ
+docs/data-dictionary.md       Data Dictionary
+docs/data-quality.md          รายงานตรวจคุณภาพข้อมูล (สร้างอัตโนมัติ)
 ```

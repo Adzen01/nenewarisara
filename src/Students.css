@@ -1,6 +1,6 @@
-.st-table { min-width: 760px; }
+.st-table { min-width: 900px; }
 .st-table td:nth-child(3) { min-width: 150px; }
-.st-table td:nth-child(4) .cell-secondary { margin-top: var(--space-1); }
+.st-table td:nth-child(6) .cell-secondary { margin-top: var(--space-1); }
 
 /* มือถือ: แต่ละแถวกลายเป็นการ์ด ไม่ต้องเลื่อนตารางแนวนอน */
 @media (max-width: 680px) {
@@ -28,3 +28,13 @@
   .st-table .cell-action { grid-column: 1 / -1; width: auto; text-align: left; }
   .st-table .cell-action .button { width: 100%; justify-content: center; border: 1px solid var(--line-strong); }
 }
+
+.field-narrow { flex: 0 1 150px; }
+
+.skill-bars { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: var(--fs-sm); }
+.skill-bars li { display: grid; grid-template-columns: minmax(0, 1fr) 64px minmax(0, 118px); align-items: center; gap: var(--space-2); }
+.skill-bars-name { line-height: 1.4; }
+.skill-bars-track { height: 8px; overflow: hidden; border-radius: 0 3px 3px 0; background: var(--track); }
+.skill-bars-track span { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+.skill-bars-value { color: var(--ink-2); font-size: var(--fs-xs); font-variant-numeric: tabular-nums; }
+.skill-bars-value.is-missing { color: var(--ink-3); font-style: italic; }

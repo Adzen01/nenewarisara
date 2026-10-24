@@ -1,33 +1,19 @@
 import dataset from '../data/internships.json'
+import profileDataset from '../data/profiles.json'
+import type { Student, StudentProfile } from './types'
 
-export type Placement = {
-  company: string | null
-  businessType: string | null
-  country: string | null
-  province: string | null
-  unit: string | null
-  department: string | null
-  position: string | null
-}
-
-export type Student = {
-  recordId: string
-  studentId: string
-  academicYearBE: number
-  academicYearCE: number
-  prefix: string
-  firstName: string
-  lastName: string
-  interestedRole: string | null
-  acceptanceStatus: string
-  applicationStage: string | null
-  accepted: boolean
-  placement: Placement | null
-}
+export type { Placement, Student, StudentProfile } from './types'
 
 export type BarItem = { name: string; count: number }
 
-export const students: Student[] = dataset.students
+// เชื่อมข้อมูลต้นฉบับกับข้อมูลจำลอง GPA/ทักษะ/Portfolio ด้วยรหัสนิสิต (studentId ไม่ซ้ำ)
+const profileById = new Map((profileDataset.profiles as StudentProfile[]).map((profile) => [profile.studentId, profile]))
+
+export const students: Student[] = dataset.students.map((student) => ({
+  ...student,
+  profile: profileById.get(student.studentId) ?? null,
+}))
+export const profileNote = profileDataset.metadata.note
 export const datasetNote = dataset.metadata.note
 
 // ใช้คำเดียวกับค่า acceptanceStatus ใน JSON ทุกหน้า

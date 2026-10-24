@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --experimental-strip-types --no-warnings --test tests/*.test.ts",
+    "data:generate": "node --experimental-strip-types --no-warnings scripts/generate-profiles.ts",
+    "data:check": "node --experimental-strip-types --no-warnings scripts/check-data.ts"
   },
   "dependencies": {
     "react": "^19.2.8",
