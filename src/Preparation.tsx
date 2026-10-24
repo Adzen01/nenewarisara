@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import dataset from './data/internships.json'
+import PageHeader from './components/PageHeader'
+import { InfoIcon } from './components/Icons'
+import { students, uniqueSorted } from './lib/internshipStats'
 import './Preparation.css'
 
 type Task = {
@@ -19,13 +21,7 @@ type ProjectIdea = {
   showcase: string
 }
 
-const roles = [
-  ...new Set(
-    dataset.students
-      .map((student) => student.interestedRole)
-      .filter((role): role is string => Boolean(role)),
-  ),
-].sort((a, b) => a.localeCompare(b, 'th'))
+const roles = uniqueSorted(students.map((student) => student.interestedRole))
 
 const commonTasks: Task[] = [
   { id: 'resume', text: 'จัดทำ Resume พร้อมข้อมูลติดต่อที่ตรวจสอบแล้ว' },
@@ -35,12 +31,15 @@ const commonTasks: Task[] = [
   { id: 'requirements', text: 'อ่านประกาศรับสมัครจริงและจดทักษะที่ยังต้องฝึก' },
 ]
 
-const roleTasks: Task[] = [
-  { id: 'basics', text: 'ทบทวนพื้นฐานตามสายงานที่เลือก' },
-  { id: 'project', text: 'ลงมือทำโปรเจกต์ตัวอย่างให้ใช้งานได้' },
-  { id: 'testing', text: 'ทดสอบผลงานและบันทึกปัญหาที่แก้ไข' },
-  { id: 'explain', text: 'เขียนสรุปวิธีทำ ผลลัพธ์ และข้อจำกัดของผลงาน' },
-]
+// id คงเดิมเพื่อให้รายการที่ติ๊กไว้ในเบราว์เซอร์ยังอยู่
+function getRoleTasks(guide: Guide): Task[] {
+  return [
+    { id: 'basics', text: `ทบทวนพื้นฐาน: ${guide.skills.join(', ')}` },
+    { id: 'project', text: `ทำโปรเจกต์ตัวอย่าง เช่น “${guide.projects[0]?.title ?? 'ผลงานของตนเอง'}” ให้ใช้งานได้` },
+    { id: 'testing', text: 'ทดสอบผลงานและบันทึกปัญหาที่แก้ไข' },
+    { id: 'explain', text: 'เขียนสรุปวิธีทำ ผลลัพธ์ และข้อจำกัดของผลงาน' },
+  ]
+}
 
 const storageKey = 'ce-internship-preparation-v1'
 
@@ -193,173 +192,150 @@ function getGuide(role: string): Guide {
 
 export default function Preparation() {
   const [selectedRole, setSelectedRole] = useState(
-    () => roles.find((role) => role.toLowerCase().includes('frontend'))
-      ?? roles[0]
-      ?? '',
+    () => roles.find((role) => role.toLowerCase().includes('frontend')) ?? roles[0] ?? '',
   )
-
-  const [checked, setChecked] =
-    useState<Record<string, boolean>>(readSavedChecks)
-
+  const [checked, setChecked] = useState<Record<string, boolean>>(readSavedChecks)
   const [saveError, setSaveError] = useState('')
 
   const guide = getGuide(selectedRole)
-
-  const tasks = [
-    ...commonTasks.map((task) => ({
-      ...task,
-      key: `common:${task.id}`,
-    })),
-    ...roleTasks.map((task) => ({
-      ...task,
-      key: `role:${selectedRole}:${task.id}`,
-    })),
-  ]
-
+  const roleTasks = getRoleTasks(guide).map((task) => ({ ...task, key: `role:${selectedRole}:${task.id}` }))
+  const generalTasks = commonTasks.map((task) => ({ ...task, key: `common:${task.id}` }))
+  const tasks = [...generalTasks, ...roleTasks]
   const completed = tasks.filter((task) => checked[task.key]).length
 
   function toggleTask(key: string) {
     const next = { ...checked, [key]: !checked[key] }
-
     setChecked(next)
 
     try {
       localStorage.setItem(storageKey, JSON.stringify(next))
       setSaveError('')
     } catch {
-      setSaveError(
-        'เบราว์เซอร์บันทึกไม่ได้ รายการที่ติ๊กจะอยู่เฉพาะระหว่างเปิดหน้านี้',
-      )
+      setSaveError('เบราว์เซอร์บันทึกไม่ได้ รายการที่ติ๊กจะอยู่เฉพาะระหว่างเปิดหน้านี้')
     }
   }
 
+  function renderTask(task: Task & { key: string }) {
+    const inputId = `task-${task.key.replace(/[^a-zA-Z0-9]+/g, '-')}`
+    return (
+      <li key={task.key}>
+        <input id={inputId} type="checkbox" checked={Boolean(checked[task.key])} onChange={() => toggleTask(task.key)} />
+        <label htmlFor={inputId}>{task.text}</label>
+      </li>
+    )
+  }
+
+  const roleSelect = (
+    <div className="field prep-role-field">
+      <label className="field-label" htmlFor="prep-role">สายงานที่สนใจ</label>
+      <select
+        id="prep-role"
+        value={selectedRole}
+        onChange={(event) => setSelectedRole(event.target.value)}
+        disabled={roles.length === 0}
+      >
+        {roles.length === 0 && <option value="">ไม่มีสายงานในชุดข้อมูล</option>}
+        {roles.map((role) => <option key={role} value={role}>{role}</option>)}
+      </select>
+    </div>
+  )
+
   return (
-    <section className="prep-page" aria-labelledby="prep-title">
-      <div className="prep-toolbar">
-        <div>
-          <h2 id="prep-title">วางแผนก่อนสมัครฝึกงาน</h2>
-          <p>เลือกสายงาน แล้วใช้เช็กลิสต์ติดตามสิ่งที่ลงมือทำ</p>
-        </div>
+    <section className="page" aria-labelledby="prep-title">
+      <PageHeader
+        id="prep-title"
+        title="เตรียมความพร้อม"
+        description="เลือกสายงาน ดูหัวข้อที่ควรฝึกและไอเดียโปรเจกต์ แล้วใช้เช็กลิสต์ติดตามสิ่งที่ลงมือทำ"
+        actions={roleSelect}
+      />
 
-        <div className="prep-field">
-          <label htmlFor="prep-role">สายงานที่สนใจ</label>
-          <select
-            id="prep-role"
-            value={selectedRole}
-            onChange={(event) => setSelectedRole(event.target.value)}
-            disabled={roles.length === 0}
-          >
-            {roles.length === 0 && (
-              <option value="">ไม่มีสายงานในชุดข้อมูล</option>
-            )}
-            {roles.map((role) => (
-              <option key={role} value={role}>
-                {role}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+      <p className="callout">
+        <InfoIcon />
+        <span>
+          เนื้อหานี้เป็นคำแนะนำเบื้องต้น ไม่ใช่ข้อกำหนดของบริษัท ควรตรวจคุณสมบัติจากประกาศรับสมัครจริงก่อนสมัคร
+        </span>
+      </p>
 
-      <div className="prep-grid">
-        <section className="prep-panel">
-          <h3>หัวข้อที่ควรฝึกเบื้องต้น</h3>
-
-          <div className="prep-tags">
-            {guide.skills.map((skill) => (
-              <span key={skill}>{skill}</span>
-            ))}
-          </div>
-
-          <div className="prep-project-heading">
-            <div>
-              <h3>ไอเดียโปรเจกต์สำหรับ Portfolio</h3>
-              <p className="prep-muted">เลือกทำหนึ่งชิ้นให้จบ หรือปรับโจทย์ให้เป็นผลงานของตัวเอง</p>
-            </div>
-            <span>{guide.projects.length} แนวทาง</span>
-          </div>
-
-          <div className="prep-project-grid">
-            {guide.projects.map((project, index) => (
-              <article className="prep-project-card" key={project.title}>
-                <p className="prep-project-index">PROJECT 0{index + 1}</p>
-                <h4>{project.title}</h4>
-                <p className="prep-project-summary">{project.summary}</p>
-                <h5>แนวทางต่อยอด</h5>
-                <ul>
-                  {project.build.map((step) => <li key={step}>{step}</li>)}
-                </ul>
-                <div className="prep-project-showcase">
-                  <strong>สิ่งที่นำเสนอได้</strong>
-                  <p>{project.showcase}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <aside className="prep-portfolio-tip">
-            <strong>ทำให้คนดูเข้าใจผลงานได้เร็ว</strong>
-            <ul>
-              <li>เล่าโจทย์และผู้ใช้ที่ต้องการช่วย</li>
-              <li>บอกส่วนที่คุณลงมือทำและเหตุผลที่เลือกวิธีนั้น</li>
-              <li>แนบภาพหรือ demo พร้อมวิธีติดตั้งและทดสอบ</li>
-              <li>สรุปข้อจำกัด สิ่งที่เรียนรู้ และสิ่งที่จะพัฒนาต่อ</li>
-            </ul>
-          </aside>
-        </section>
-
-        <section className="prep-panel">
-          <div className="prep-check-heading">
-            <h3>เช็กลิสต์ของฉัน</h3>
-            <span aria-live="polite">
-              ทำแล้ว {completed} / {tasks.length} ข้อ
-            </span>
-          </div>
-
-          <progress
-            className="prep-progress"
-            value={completed}
-            max={tasks.length}
-            aria-label="จำนวนรายการที่ทำแล้ว"
-          />
-
-          <div className="prep-tasks">
-            {tasks.map((task, index) => (
-              <div key={task.key}>
-                {index === commonTasks.length && (
-                  <p className="prep-divider">
-                    สำหรับสายงาน {selectedRole || 'ที่เลือก'}
-                  </p>
-                )}
-
-                <label className="prep-task">
-                  <input
-                    type="checkbox"
-                    checked={Boolean(checked[task.key])}
-                    onChange={() => toggleTask(task.key)}
-                  />
-                  <span>{task.text}</span>
-                </label>
+      <div className="prep-layout">
+        <div className="prep-guide">
+          <section className="panel" aria-labelledby="prep-skills-title">
+            <header className="panel-header">
+              <div>
+                <h2 id="prep-skills-title">หัวข้อที่ควรฝึกเบื้องต้น</h2>
+                <p className="panel-meta">สำหรับสายงาน {selectedRole || 'ที่เลือก'}</p>
               </div>
-            ))}
-          </div>
+            </header>
+            <ul className="prep-skills">
+              {guide.skills.map((skill) => <li key={skill}>{skill}</li>)}
+            </ul>
+          </section>
 
-          {saveError && (
-            <p className="prep-error" role="status">{saveError}</p>
-          )}
+          <section className="panel" aria-labelledby="prep-projects-title">
+            <header className="panel-header">
+              <div>
+                <h2 id="prep-projects-title">ไอเดียโปรเจกต์สำหรับ Portfolio</h2>
+                <p className="panel-meta">เลือกทำหนึ่งชิ้นให้จบ หรือปรับโจทย์ให้เป็นผลงานของตัวเอง</p>
+              </div>
+              <span className="count-badge">{guide.projects.length} แนวทาง</span>
+            </header>
 
-          <p className="prep-muted prep-storage-note">
-            บันทึกเฉพาะเบราว์เซอร์นี้ ไม่ซิงก์ข้ามอุปกรณ์
-            และอาจหายเมื่อคุณล้างข้อมูลเว็บไซต์
+            <div className="prep-projects">
+              {guide.projects.map((project) => (
+                <article className="prep-project" key={project.title}>
+                  <h3>{project.title}</h3>
+                  <p className="prep-project-summary">{project.summary}</p>
+                  <h4>แนวทางต่อยอด</h4>
+                  <ul>
+                    {project.build.map((step) => <li key={step}>{step}</li>)}
+                  </ul>
+                  <div className="prep-showcase">
+                    <h4>สิ่งที่นำเสนอได้</h4>
+                    <p>{project.showcase}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="prep-tip">
+              <h3>ทำให้คนดูเข้าใจผลงานได้เร็ว</h3>
+              <ul>
+                <li>เล่าโจทย์และผู้ใช้ที่ต้องการช่วย</li>
+                <li>บอกส่วนที่คุณลงมือทำและเหตุผลที่เลือกวิธีนั้น</li>
+                <li>แนบภาพหรือ demo พร้อมวิธีติดตั้งและทดสอบ</li>
+                <li>สรุปข้อจำกัด สิ่งที่เรียนรู้ และสิ่งที่จะพัฒนาต่อ</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <section className="panel prep-checklist" aria-labelledby="prep-check-title">
+          <header className="panel-header">
+            <div>
+              <h2 id="prep-check-title">เช็กลิสต์ของฉัน</h2>
+              <p className="panel-meta" aria-live="polite">ทำแล้ว {completed} จาก {tasks.length} ข้อ</p>
+            </div>
+          </header>
+
+          <progress className="prep-progress" value={completed} max={tasks.length} aria-label={`ทำแล้ว ${completed} จาก ${tasks.length} ข้อ`} />
+
+          <fieldset className="prep-task-group">
+            <legend>ทุกสายงาน</legend>
+            <ul className="prep-tasks">{generalTasks.map(renderTask)}</ul>
+          </fieldset>
+
+          <fieldset className="prep-task-group">
+            <legend>สำหรับสายงาน {selectedRole || 'ที่เลือก'}</legend>
+            <ul className="prep-tasks">{roleTasks.map(renderTask)}</ul>
+          </fieldset>
+
+          {saveError && <p className="form-error" role="status">{saveError}</p>}
+
+          <p className="panel-meta">
+            บันทึกเฉพาะในเบราว์เซอร์นี้ ไม่ซิงก์ข้ามอุปกรณ์ และอาจหายเมื่อล้างข้อมูลเว็บไซต์
+            จำนวนข้อที่ติ๊กใช้ติดตามงานของตัวเองเท่านั้น ไม่ใช่คะแนนหรือโอกาสได้ฝึกงาน
           </p>
         </section>
       </div>
-
-      <p className="prep-footer">
-        แนวทางนี้เป็นเนื้อหาเบื้องต้น ไม่ใช่ข้อกำหนดของบริษัท
-        ควรตรวจประกาศรับสมัครจริงก่อนสมัคร
-        จำนวนข้อที่ติ๊กใช้ติดตามงานส่วนตัว ไม่ใช่คะแนนหรือโอกาสได้ฝึกงาน
-      </p>
     </section>
   )
 }
